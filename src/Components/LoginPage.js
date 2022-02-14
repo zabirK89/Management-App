@@ -1,20 +1,14 @@
 import React from "react";
-import Box from '@mui/material/Box';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 export default function header(){
   return (
-    <div>
-        <Box
-      sx={{
-        width: 300,
-        height:"100px",
-        padding:"200px",
-        marginLeft:"28%",
-        marginTop:"12%",
-        backgroundColor: 'cyan',
-         
-      }}
-    >
-      </Box>
-      </div>
+    <React.Fragment>
+    <CssBaseline />
+    <Container maxWidth="sm">
+      <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '400px' ,marginTop:"36%" ,width:"600px",height:"500px",marginTop:"130px"}} />
+    </Container>
+  </React.Fragment>
   )
 }
