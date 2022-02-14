@@ -18,13 +18,6 @@ function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 export default function Table() {
   return (
@@ -42,7 +35,7 @@ export default function Table() {
           autoWidth
           label="Age"
         >
-          <MenuItem value="">
+          <MenuItem value="" style={{padding:"5px",height:"44px"}}>
           <em>None</em>
           </MenuItem>
           <MenuItem value={10}>All Users</MenuItem>
@@ -52,10 +45,10 @@ export default function Table() {
           <MenuItem value={10}>Custom Filters</MenuItem>
         </Select>
       </FormControl>
-      <Button variant="outlined" startIcon={<FilterListIcon/>}>
+      <Button variant="outlined" startIcon={<FilterListIcon/>} style={{padding:"5px",height:"44px"}}>
       More
       </Button>
-      <Button variant="outlined" startIcon={<ReplayIcon />}>
+      <Button variant="outlined" startIcon={<ReplayIcon />} style={{padding:"5px",height:"44px"}}>
   Reload
       </Button>
      
@@ -64,7 +57,7 @@ export default function Table() {
 
     </div>
     <br/>
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} >
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
