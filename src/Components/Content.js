@@ -10,6 +10,10 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import ReplayIcon from '@mui/icons-material/Replay';
 import FilterListIcon from '@mui/icons-material/FilterList';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
@@ -28,6 +32,26 @@ export default function Table() {
     <div>
       <h2>Users</h2>
       <Stack direction="row" spacing={2}>
+      <FormControl sx={{ m: 1, minWidth: 80 }}>
+        <InputLabel id="demo-simple-select-autowidth-label"></InputLabel>
+        <Select
+          labelId="demo-simple-select-autowidth-label"
+          id="demo-simple-select-autowidth"
+          
+        
+          autoWidth
+          label="Age"
+        >
+          <MenuItem value="">
+          <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>All Users</MenuItem>
+          <MenuItem value={21}>Recently Created Users</MenuItem>
+          <MenuItem value={22}>Recently Updated Users</MenuItem>
+          <MenuItem value={10}>Active Users</MenuItem>
+          <MenuItem value={10}>Custom Filters</MenuItem>
+        </Select>
+      </FormControl>
       <Button variant="outlined" startIcon={<FilterListIcon/>}>
       More
       </Button>
