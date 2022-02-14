@@ -11,7 +11,7 @@ export default function App() {
       
 
 <Routes>
-<Route path="/Login" element={ <LoginPage/>} />
+<Route path="/login" element={ <LoginPage/>} />
 <Route path="/admin" element={ <Sidebar/>} />
 
     </Routes>

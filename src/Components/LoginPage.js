@@ -3,7 +3,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Divider from '@mui/material/Divider';
 import { Link } from 'react-router-dom';
@@ -46,7 +45,7 @@ export default function header(){
         />
         <br/>
         <br/>
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/admin" style={{ textDecoration: 'none' }}>
    <Button variant="contained" color="primary" style={{width:"550px"}}>
   Login
 </Button>

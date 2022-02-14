@@ -20,9 +20,9 @@ export default function ClippedDrawer() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}style={{shadow:"none",backdroundColor:"white"}}>
+        <Toolbar >
+          <Typography variant="h6" noWrap component="div" >
             Clipped drawer
           </Typography>
         </Toolbar>
@@ -53,6 +53,12 @@ hello buddy
               </ListItem>
             ))}
           </List>
+          {/* <List style={{justifyContent:"center",alingItem:"center"}}>
+            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
+            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
+            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
+            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
+            </List> */}
         
        
         </Box>
