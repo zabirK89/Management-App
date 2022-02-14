@@ -5,15 +5,18 @@ import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
+import Divider from '@mui/material/Divider';
+import { Link } from 'react-router-dom';
+import "../style.css";
 export default function header(){
   return (
     <React.Fragment>
     <CssBaseline />
     <Container maxWidth="sm">
-      <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '400px' ,marginTop:"36%" ,width:"600px",height:"500px",marginTop:"130px"}} >
-      <div classname="logincont">
+      <Typography component="div" style={{  boxShadow: "10px 8px 10px  10px #aaaaaa", backgroundColor: 'white', height: '400px' ,marginTop:"36%" ,width:"600px",height:"500px",marginTop:"130px",borderRadius:"10px"}} >
+      <div classname="logincont" style={{padding:"30px"}}>
         <h2>Admin Login</h2>
+        <br/>
         <TextField
           id="outlined-full-width"
           label="Email Address
@@ -29,6 +32,7 @@ export default function header(){
           }}
           variant="outlined"
         />
+        <br/>
            <TextField
           id="outlined-full-width"
           label="Password "
@@ -42,13 +46,18 @@ export default function header(){
         />
         <br/>
         <br/>
+        <Link to="/" style={{ textDecoration: 'none' }}>
    <Button variant="contained" color="primary" style={{width:"550px"}}>
   Login
 </Button>
-
-
-
+</Link>
+<br/>
       </div>
+      <div style={{marginLeft:"60px"}}>This login is only for ADMIN!</div>
+      <br/>
+      <Divider/>
+      <div style={{marginLeft:"40px"}}>Create a new password</div>
+      <div style={{marginLeft:"40px"}}>Forgot password</div>
       </Typography>
     </Container>
   </React.Fragment>
