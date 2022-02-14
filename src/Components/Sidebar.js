@@ -13,6 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Table from "../Components/Content"
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -43,7 +44,7 @@ hello buddy
           
         <Divider />
         <Box sx={{ overflow: 'auto' }}>
-          <List>
+          {/* <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon>
@@ -52,13 +53,15 @@ hello buddy
                 <ListItemText primary={text} />
               </ListItem>
             ))}
-          </List>
-          {/* <List style={{justifyContent:"center",alingItem:"center"}}>
+          </List> */}
+          <List style={{justifyContent:"center",alingItem:"center"}}>
+            <Link to="/holiday">
+            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
+            </Link>
             <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
             <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
             <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
-            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
-            </List> */}
+            </List>
         
        
         </Box>
