@@ -36,6 +36,12 @@ export default function ClippedDrawer() {
         }}
       >
         <Toolbar />
+       
+           <div  className="cont " >
+hello buddy
+           </div>
+          
+        <Divider />
         <Box sx={{ overflow: 'auto' }}>
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -47,17 +53,8 @@ export default function ClippedDrawer() {
               </ListItem>
             ))}
           </List>
-          <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
+        
+       
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

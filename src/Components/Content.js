@@ -6,7 +6,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import ReplayIcon from '@mui/icons-material/Replay';
+import FilterListIcon from '@mui/icons-material/FilterList';
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
@@ -24,10 +27,19 @@ export default function Table() {
     <>
     <div>
       <h2>Users</h2>
-
+      <Stack direction="row" spacing={2}>
+      <Button variant="outlined" startIcon={<FilterListIcon/>}>
+      More
+      </Button>
+      <Button variant="outlined" startIcon={<ReplayIcon />}>
+  Reload
+      </Button>
+     
+    </Stack>
 
 
     </div>
+    <br/>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
