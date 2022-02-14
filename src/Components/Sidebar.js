@@ -12,7 +12,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import Table from "../Components/Content"
+import Table from '../Components/Content';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -21,9 +21,13 @@ export default function ClippedDrawer() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}style={{shadow:"none",backdroundColor:"white"}}>
-        <Toolbar >
-          <Typography variant="h6" noWrap component="div" >
+      <AppBar
+        position="fixed"
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        style={{ shadow: 'none', backdroundColor: 'white' }}
+      >
+        <Toolbar>
+          <Typography variant="h6" noWrap component="div">
             Clipped drawer
           </Typography>
         </Toolbar>
@@ -33,15 +37,16 @@ export default function ClippedDrawer() {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+          [`& .MuiDrawer-paper`]: {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
         }}
       >
         <Toolbar />
-       
-           <div  className="cont " >
-hello buddy
-           </div>
-          
+
+        <div className="cont ">hello buddy</div>
+
         <Divider />
         <Box sx={{ overflow: 'auto' }}>
           {/* <List>
@@ -54,22 +59,22 @@ hello buddy
               </ListItem>
             ))}
           </List> */}
-          <List style={{justifyContent:"center",alingItem:"center"}}>
+          <List style={{ justifyContent: 'center', alingItem: 'center' }}>
             <Link to="/holiday">
-            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
+              <div style={{ backgroundColor: 'red', height: '45px' }}>
+                hello
+              </div>
             </Link>
-            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
-            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
-            <div style={{backgroundColor:"red" ,height:"45px"}}>hello</div>
-            </List>
-        
-       
+            <div style={{ backgroundColor: 'red', height: '45px' }}>hello</div>
+            <div style={{ backgroundColor: 'red', height: '45px' }}>hello</div>
+            <div style={{ backgroundColor: 'red', height: '45px' }}>hello</div>
+          </List>
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
         <Typography paragraph>
-        <Table/>
+          <Table />
         </Typography>
       </Box>
     </Box>
