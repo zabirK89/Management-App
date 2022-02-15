@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import InputIcon from '@mui/icons-material/Input';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import DevicesIcon from '@mui/icons-material/Devices';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 const drawerWidth = 240;
 
 export default function ClippedDrawer() {
@@ -71,8 +73,8 @@ export default function ClippedDrawer() {
               </div>
             </Link>
             <div style={{display: "flex",height:"40px"}} >Holidays</div>
-            <div style={{display: "flex",height:"40px"}} >Assets</div>
-            <div style={{display: "flex",height:"40px"}}>Tickets</div>
+            <div style={{display: "flex",height:"40px"}} > <DevicesIcon/>Assets</div>
+            <div style={{display: "flex",height:"40px"}}><ConfirmationNumberIcon/>Tickets</div>
           </List>
         </Box>
       </Drawer>
