@@ -21,21 +21,25 @@ const drawerWidth = 240;
 export default function ClippedDrawer() {
   return (
     <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        style={{ shadow: 'none', backdroundColor: 'white' }}
-      >
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            <div className="header-item">
-          <Avatar style={{marginRight:"25px"}} /> 
-          <InputIcon />
-          </div>
-          </Typography>
-        </Toolbar>
-      </AppBar>
+    <CssBaseline />
+    <AppBar id='header'
+      position="fixed"
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      style={{ shadow: 'none', backdroundColor: 'white' }}
+ 
+    >
+   
+      <Toolbar>
+        <Typography variant="h6" noWrap component="div">
+          <div className="header-item">
+        <Avatar style={{marginRight:"25px"}}  id="a"/> 
+        <InputIcon  style={{color:"#a7b8ab"}} id="a"/>
+        </div>
+        </Typography>
+      
+      </Toolbar>
+      <Divider/>
+    </AppBar>
       <Drawer
         variant="permanent"
         sx={{
