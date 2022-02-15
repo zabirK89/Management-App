@@ -67,7 +67,7 @@ export default function ClippedDrawer() {
           <List className="options">
             <Link to="/holiday">
               <div style={{display: "flex"}}>
-              <PeopleAltIcon style={{marginLeft:"7px"}}/>   Users
+              <PeopleAltIcon style={{marginLeft:"7px",marginRight:"10px"}}/>   Users
               </div>
             </Link>
             <div >Holidays</div>
