@@ -39,7 +39,11 @@ margin-left: 1300px;
 .options{
   padding :20px;
   margin:5px ;
+}
+#a:hover {
+  text-decoration:none;
+  background-color:whitesmoke;
+  color:black;
   
-
 }
 
