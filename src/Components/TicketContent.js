@@ -23,7 +23,7 @@ export default function TicketsContent() {
   return (
     <>
     <div>
-      <h1 style={{marginLeft:"40px"}}>Users</h1>
+
       <div className="content-btn">
       <Stack direction="row" spacing={2} >
       <FormControl sx={{ m: 1, minWidth: 80 }} >
