@@ -41,8 +41,9 @@ export default function ClippedDrawer() {
         <Toolbar />
 
         <div className="cont ">
-          <div style={{backdroundColor:"red" ,height:"80px"}}>
-          hello buddy
+          <div style={{backgroundColor:"red" ,height:"80px"}}>
+     
+     hello
           </div>
           </div>
 
