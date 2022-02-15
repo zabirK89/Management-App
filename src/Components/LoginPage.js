@@ -6,8 +6,19 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Divider from '@mui/material/Divider';
 import { Link } from 'react-router-dom';
+import {useState} from "react"
 import "../style.css";
 export default function header(){
+  const [email,setemail]=useState("")
+  const [password ,setpassword]=useState("")
+ const changeemail=(e)=>{
+    setemail(e.target.value)
+    console.log(email)
+  }
+  const changepassword=(e)=>{
+    setpassword(e.target.value)
+    console.log(password)
+  }
   return (
     <React.Fragment>
     <CssBaseline />
@@ -30,6 +41,8 @@ export default function header(){
             shrink: true,
           }}
           variant="outlined"
+          type="email"
+          onChange={changeemail}
         />
         <br/>
            <TextField
@@ -42,6 +55,8 @@ export default function header(){
             shrink: true,
           }}
           variant="outlined"
+          type="password"
+          onChange={changepassword}
         />
         <br/>
         <br/>
