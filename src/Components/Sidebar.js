@@ -14,6 +14,7 @@ import InputIcon from '@mui/icons-material/Input';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import DevicesIcon from '@mui/icons-material/Devices';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 const drawerWidth = 240;
 
 export default function ClippedDrawer() {
@@ -72,9 +73,9 @@ export default function ClippedDrawer() {
               <PeopleAltIcon style={{marginLeft:"7px",marginRight:"10px"}}/>   Users
               </div>
             </Link>
-            <div style={{display: "flex",height:"40px"}} >Holidays</div>
-            <div style={{display: "flex",height:"40px"}} > <DevicesIcon/>Assets</div>
-            <div style={{display: "flex",height:"40px"}}><ConfirmationNumberIcon/>Tickets</div>
+            <div style={{display: "flex",height:"40px"}} ><BeachAccessIcon style={{marginLeft:"7px",marginRight:"10px"}}/> Holidays</div>
+            <div style={{display: "flex",height:"40px"}} > <DevicesIcon style={{marginLeft:"7px",marginRight:"10px"}}/>Assets</div>
+            <div style={{display: "flex",height:"40px"}}><ConfirmationNumberIcon style={{marginLeft:"7px",marginRight:"10px"}}/>Tickets</div>
           </List>
         </Box>
       </Drawer>
