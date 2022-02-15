@@ -74,13 +74,13 @@ export default function ClippedDrawer() {
               </div>
               </Link>
               <Link to="/holiday" style={{ textDecoration: 'none',color:"black" }}>
-            <div style={{display: "flex",height:"40px"}} ><BeachAccessIcon style={{marginLeft:"7px",marginRight:"10px"}}/> Holidays</div>
+            <div style={{display: "flex",height:"40px"}} id="a" ><BeachAccessIcon style={{marginLeft:"7px",marginRight:"10px"}}/> Holidays</div>
             </Link>
             <Link to="/assets" style={{ textDecoration: 'none',color:"black" }}>
-            <div style={{display: "flex",height:"40px"}} > <DevicesIcon style={{marginLeft:"7px",marginRight:"10px"}}/>Assets</div>
+            <div style={{display: "flex",height:"40px"}} id="a" > <DevicesIcon style={{marginLeft:"7px",marginRight:"10px"}}/>Assets</div>
       </Link>
             <Link to="/tickets" style={{ textDecoration: 'none',color:"black" }}>
-            <div style={{display: "flex",height:"40px"}}><ConfirmationNumberIcon style={{marginLeft:"7px",marginRight:"10px"}}/>Tickets</div>
+            <div style={{display: "flex",height:"40px"}} id="a"><ConfirmationNumberIcon style={{marginLeft:"7px",marginRight:"10px"}}/>Tickets</div>
             </Link>
           </List>
         </Box>
