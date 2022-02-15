@@ -31,8 +31,8 @@ export default function ClippedDrawer() {
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
             <div className="header-item">
-          <Avatar style={{marginRight:"25px"}} /> 
-          <InputIcon />
+          <Avatar style={{marginRight:"25px",color:"whitesmoke"}} /> 
+          <InputIcon  style={{color:"whitesmoke"}}/>
           </div>
           </Typography>
         
