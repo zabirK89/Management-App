@@ -10,6 +10,7 @@ import Divider from '@mui/material/Divider';
 import Table from '../Components/Content';
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
+import InputIcon from '@mui/icons-material/Input';
 const drawerWidth = 240;
 
 export default function ClippedDrawer() {
@@ -23,7 +24,10 @@ export default function ClippedDrawer() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
-            Clipped drawer
+            <div className="header-item">
+          <Avatar /> 
+          <InputIcon />
+          </div>
           </Typography>
         </Toolbar>
       </AppBar>
