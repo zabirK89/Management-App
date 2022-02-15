@@ -11,6 +11,7 @@ import Table from '../Components/Content';
 import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import InputIcon from '@mui/icons-material/Input';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 const drawerWidth = 240;
 
 export default function ClippedDrawer() {
@@ -25,7 +26,7 @@ export default function ClippedDrawer() {
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
             <div className="header-item">
-          <Avatar /> 
+          <Avatar style={{marginRight:"25px"}} /> 
           <InputIcon />
           </div>
           </Typography>
@@ -63,15 +64,15 @@ export default function ClippedDrawer() {
               </ListItem>
             ))}
           </List> */}
-          <List style={{ justifyContent: 'center', alingItem: 'center' }}>
+          <List className="options">
             <Link to="/holiday">
-              <div style={{ backgroundColor: 'red', height: '45px' }}>
-                hello
+              <div style={{display: "flex"}}>
+              <PeopleAltIcon style={{marginLeft:"40px"}}/>   Users
               </div>
             </Link>
-            <div style={{ backgroundColor: 'red', height: '45px' }}>hello</div>
-            <div style={{ backgroundColor: 'red', height: '45px' }}>hello</div>
-            <div style={{ backgroundColor: 'red', height: '45px' }}>hello</div>
+            <div >Holidays</div>
+            <div >Assets</div>
+            <div >Tickets</div>
           </List>
         </Box>
       </Drawer>

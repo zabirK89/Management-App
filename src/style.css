@@ -31,3 +31,14 @@ align-items: center;
 height: 40px;
 margin-left: 1300px;
 }
+.content-btn{
+  display: flex;
+  align-items: center;
+
+}
+.options{
+  padding :5px;
+  margin:5px ;
+
+  background-color: whitesmoke;
+}

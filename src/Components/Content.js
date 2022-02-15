@@ -23,9 +23,10 @@ export default function Table() {
   return (
     <>
     <div>
-      <h2>Users</h2>
-      <Stack direction="row" spacing={2}>
-      <FormControl sx={{ m: 1, minWidth: 80 }}>
+      <h1 style={{marginLeft:"40px"}}>Users</h1>
+      <div className="content-btn">
+      <Stack direction="row" spacing={2} >
+      <FormControl sx={{ m: 1, minWidth: 80 }} >
         <InputLabel id="demo-simple-select-autowidth-label"></InputLabel>
         <Select
           labelId="demo-simple-select-autowidth-label"
@@ -34,10 +35,9 @@ export default function Table() {
         
           autoWidth
           label="Age"
+          style={{height:"35px",width:"45px",marginLeft:"40px"}}
         >
-          <MenuItem value="" style={{padding:"5px",height:"44px"}}>
-          <em>None</em>
-          </MenuItem>
+
           <MenuItem value={10}>All Users</MenuItem>
           <MenuItem value={21}>Recently Created Users</MenuItem>
           <MenuItem value={22}>Recently Updated Users</MenuItem>
@@ -53,6 +53,7 @@ export default function Table() {
       </Button>
      
     </Stack>
+    </div>
 
 
     </div>

@@ -71,7 +71,7 @@ export default function Holiday() {
               </ListItem>
             ))}
           </List> */}
-            <List style={{ justifyContent: 'center', alingItem: 'center' }}>
+            <List style={{display:"flex", justifyContent: 'center', alingItem: 'center' }}>
               <div className="option-cont"> 
               
               <Link to="/holiday">
