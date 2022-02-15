@@ -6,6 +6,7 @@ import Sidebar from './Components/Sidebar';
 import Tickets from "./Components/Tickets"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Holiday from './Components/Holiday';
+import Assets from "./Components/Assets"
 export default function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/holiday" element={<Holiday />} />
         <Route path="/admin" element={<Sidebar />}></Route>
         <Route path="/tickets" element={<Tickets />} />
+        <Route path="/assets" element={<Assets />} />
       </Routes>
     </BrowserRouter>
   );

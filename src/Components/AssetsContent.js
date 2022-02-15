@@ -19,11 +19,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 
-export default function Holidaycontent() {
+export default function AssetsContent() {
   return (
     <>
     <div>
-      <h1 style={{marginLeft:"40px"}}>Holidays</h1>
+    
       <div className="content-btn">
       <Stack direction="row" spacing={2} >
       <FormControl sx={{ m: 1, minWidth: 80 }} >
@@ -38,13 +38,19 @@ export default function Holidaycontent() {
           style={{height:"35px",width:"45px",marginLeft:"40px"}}
         >
 
-          <MenuItem value={10}>2020</MenuItem>
-          <MenuItem value={21}>2021</MenuItem>
-          <MenuItem value={22}>2022</MenuItem>
-         
+          <MenuItem value={10}>All Unallocated Assets</MenuItem>
+          <MenuItem value={21}>Recently Updated</MenuItem>
+          <MenuItem value={22}>Recently Allocated</MenuItem>
+          <MenuItem value={10}>Active Inactive Assets</MenuItem>
+          <MenuItem value={10}>Custom Filters</MenuItem>
         </Select>
       </FormControl>
-     
+      <Button variant="outlined" startIcon={<FilterListIcon/>} style={{padding:"5px",height:"44px"}}>
+      More
+      </Button>
+      <Button variant="outlined" startIcon={<ReplayIcon />} style={{padding:"5px",height:"44px"}}>
+  Reload
+      </Button>
      
     </Stack>
     </div>
@@ -56,11 +62,11 @@ export default function Holidaycontent() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Name</TableCell>
-            <TableCell align="right">Date</TableCell>
-            <TableCell align="right">Year</TableCell>
-            <TableCell align="right">Date of Week</TableCell>
+            <TableCell>Serial No</TableCell>
+            <TableCell align="right">Type</TableCell>
+            <TableCell align="right">Description</TableCell>
+            <TableCell align="right">(De) Allocated Since</TableCell>
+            <TableCell align="right">Allocated To</TableCell>
             <TableCell align="right">Action</TableCell>
           </TableRow>
         </TableHead>
