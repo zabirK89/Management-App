@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Table from '../Components/Content';
 import { Link } from 'react-router-dom';
-
+import Avatar from '@mui/material/Avatar';
 const drawerWidth = 240;
 
 export default function ClippedDrawer() {
@@ -42,10 +42,10 @@ export default function ClippedDrawer() {
 
         <div className="cont ">
           <div className="wrapper">
-     
-     hello
+            <Avatar src="/broken-image.jpg"  style={{marginRight:"13px" ,backgroundColor:"black"}} />
+            Webile Admin
           </div>
-          </div>
+        </div>
 
         <Divider />
         <Box sx={{ overflow: 'auto' }}>

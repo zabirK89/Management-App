@@ -2,17 +2,21 @@ h1, p {
   font-family: Lato;
 }
 .cont{
-  height: 100px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+
 }
 .wrapper{
 
-background-color: red;
-height: 50px;
+background-color:whitesmoke;
+height: 100px;
 width: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 8px;
 
 
 }
