@@ -72,19 +72,22 @@ export default function Holiday() {
             ))}
           </List> */}
             <List style={{ justifyContent: 'center', alingItem: 'center' }}>
+              <div className="option-cont"> 
+              
               <Link to="/holiday">
-                <div style={{ backgroundColor: 'red', height: '45px' }}>
+                <div >
                   hello
                 </div>
               </Link>
-              <div style={{ backgroundColor: 'red', height: '45px' }}>
+              <div >
                 hello
               </div>
-              <div style={{ backgroundColor: 'red', height: '45px' }}>
+              <div >
                 hello
               </div>
-              <div style={{ backgroundColor: 'red', height: '45px' }}>
+              <div >
                 hello
+              </div>
               </div>
             </List>
           </Box>

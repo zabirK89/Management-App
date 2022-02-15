@@ -1,6 +1,22 @@
 h1, p {
   font-family: Lato;
 }
-.logincont{
-  
+.cont{
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.wrapper{
+
+background-color: red;
+height: 4px;
+
+
+}
+.option-cont{
+ justify-content: center;
+ align-items: center;
+
 }
