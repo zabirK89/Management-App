@@ -70,9 +70,9 @@ export default function ClippedDrawer() {
               <PeopleAltIcon style={{marginLeft:"7px",marginRight:"10px"}}/>   Users
               </div>
             </Link>
-            <div >Holidays</div>
-            <div >Assets</div>
-            <div >Tickets</div>
+            <div style={{display: "flex",height:"40px"}} >Holidays</div>
+            <div style={{display: "flex",height:"40px"}} >Assets</div>
+            <div style={{display: "flex",height:"40px"}}>Tickets</div>
           </List>
         </Box>
       </Drawer>
