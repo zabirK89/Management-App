@@ -32,7 +32,7 @@ export default function ClippedDrawer() {
           <Typography variant="h6" noWrap component="div">
             <div className="header-item">
           <Avatar style={{marginRight:"25px",color:"whitesmoke"}} /> 
-          <InputIcon  style={{color:"whitesmoke"}}/>
+          <InputIcon  style={{color:"black"}}/>
           </div>
           </Typography>
         
