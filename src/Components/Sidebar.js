@@ -68,14 +68,19 @@ export default function ClippedDrawer() {
             ))}
           </List> */}
           <List className="options">
-            <Link to="/holiday">
+         
               <div style={{display: "flex",height:"40px"}}>
               <PeopleAltIcon style={{marginLeft:"7px",marginRight:"10px"}}/>   Users
               </div>
-            </Link>
+              <Link to="/holiday">
             <div style={{display: "flex",height:"40px"}} ><BeachAccessIcon style={{marginLeft:"7px",marginRight:"10px"}}/> Holidays</div>
+            </Link>
+            <Link to="/assets">
             <div style={{display: "flex",height:"40px"}} > <DevicesIcon style={{marginLeft:"7px",marginRight:"10px"}}/>Assets</div>
+      </Link>
+            <Link to="/tickets">
             <div style={{display: "flex",height:"40px"}}><ConfirmationNumberIcon style={{marginLeft:"7px",marginRight:"10px"}}/>Tickets</div>
+            </Link>
           </List>
         </Box>
       </Drawer>

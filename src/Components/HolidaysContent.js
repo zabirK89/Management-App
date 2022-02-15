@@ -19,13 +19,14 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 
-export default function Tickets() {
+export default function Holidaycontent() {
   return (
     <>
     <div>
-    
-      <Stack direction="row" spacing={2}>
-      <FormControl sx={{ m: 1, minWidth: 80 }}>
+      <h1 style={{marginLeft:"40px"}}>Users</h1>
+      <div className="content-btn">
+      <Stack direction="row" spacing={2} >
+      <FormControl sx={{ m: 1, minWidth: 80 }} >
         <InputLabel id="demo-simple-select-autowidth-label"></InputLabel>
         <Select
           labelId="demo-simple-select-autowidth-label"
@@ -34,15 +35,13 @@ export default function Tickets() {
         
           autoWidth
           label="Age"
+          style={{height:"35px",width:"45px",marginLeft:"40px"}}
         >
-          <MenuItem value="" style={{padding:"5px",height:"44px"}}>
-          <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Name</MenuItem>
-          <MenuItem value={21}>Date</MenuItem>
-          <MenuItem value={22}>Year</MenuItem>
-          <MenuItem value={10}>Day of week Action</MenuItem>
-          <MenuItem value={10}>Action</MenuItem>
+
+          <MenuItem value={10}>2020</MenuItem>
+          <MenuItem value={21}>2021</MenuItem>
+          <MenuItem value={22}>2022</MenuItem>
+         
         </Select>
       </FormControl>
       <Button variant="outlined" startIcon={<FilterListIcon/>} style={{padding:"5px",height:"44px"}}>
@@ -53,6 +52,7 @@ export default function Tickets() {
       </Button>
      
     </Stack>
+    </div>
 
 
     </div>
@@ -62,11 +62,11 @@ export default function Tickets() {
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell align="right">No</TableCell>
-            <TableCell align="right">Title</TableCell>
-            <TableCell align="right">Category</TableCell>
-            <TableCell align="right">Created by</TableCell>
-            <TableCell align="right">Assigned to</TableCell>
+            <TableCell align="right">Name</TableCell>
+            <TableCell align="right">Date</TableCell>
+            <TableCell align="right">Year</TableCell>
+            <TableCell align="right">Date of Week</TableCell>
+            <TableCell align="right">Action</TableCell>
           </TableRow>
         </TableHead>
         {/* <TableBody>
