@@ -11,13 +11,21 @@ import "../style.css";
 export default function header(){
   const [email,setemail]=useState("")
   const [password ,setpassword]=useState("")
+  const [entry,setentry]=useState([]);
  const changeemail=(e)=>{
     setemail(e.target.value)
-    console.log(email)
+   
   }
   const changepassword=(e)=>{
     setpassword(e.target.value)
-    console.log(password)
+    
+  }
+
+  const login=(e)=>{
+    e.preventDefault()
+    const newentry={email:email,password:password}
+    setentry([...entry,newentry])
+    console.log(entry)
   }
   return (
     <React.Fragment>
@@ -61,7 +69,7 @@ export default function header(){
         <br/>
         <br/>
         <Link to="/admin" style={{ textDecoration: 'none' }}>
-   <Button variant="contained" color="primary" style={{width:"550px"}}>
+   <Button variant="contained" color="primary" style={{width:"550px"}} onClick={login}> 
   Login
 </Button>
 </Link>
