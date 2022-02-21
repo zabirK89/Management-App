@@ -22,19 +22,19 @@ export default function header({ setUser }) {
   }
 async function login(e){
   e.preventDefault()
-  // console.log(email,password);
+  console.log(email,password);
   let result=await fetch("https://lms-dev.webileapps.io/api/users/admin/login",{
-    method:"POST",
-    header:{
-        "Content-Type":"application/json",
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
         "Accept":"application/json"
     },
-    body:JSON.stringify({ "email": "webileadmin@webileapps.com",
-    "password": "webile@123"})
+    body:JSON.stringify({ 'email':"webileadmin@webileapps.com",
+    'password': "webile@123"})
   })
   result=await result.json();
-  console.log(result)
-  console.log("clicked")
+  console.log("result:",result)
+  console.log("result")
   localStorage.setItem("user-info",JSON.stringify(result))
 
 
