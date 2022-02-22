@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react';
+import  { useContext, useState } from 'react';
+import React from "react";
+
 import './style.css';
-// import { useGetAllPostQuery } from "./Apicall/user"
 import LoginPage from './Components/LoginPage';
 import Sidebar from './Components/Sidebar';
 import Tickets from "./Components/Tickets"
