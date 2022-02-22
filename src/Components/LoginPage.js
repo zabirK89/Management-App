@@ -5,49 +5,24 @@ import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Divider from '@mui/material/Divider';
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from "react";
-export default function header({ setUser }) {
-  const [email, setemail] = useState("")
-  const [password, setpassword] = useState("")
-  const [entry, setentry] = useState([]);
-  const navigate = useNavigate();
-  const changeemail = (e) => {
-    setemail(e.target.value)
+import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import Authcontext from "../Context/AuthContex";
+export default function header() {
 
-  }
-  const changepassword = (e) => {
-    setpassword(e.target.value)
+  let { login } = useContext(Authcontext)
+  let { changeemail } = useContext(Authcontext)
+  let { changepassword } = useContext(Authcontext)
 
-  }
-async function login(e){
-  e.preventDefault()
-  console.log(email,password);
-  let result=await fetch("https://lms-dev.webileapps.io/api/users/admin/login",{
-    method:'POST',
-    headers:{
-      'Content-Type':'application/json',
-        "Accept":"application/json"
-    },
-    body:JSON.stringify({ 'email':"webileadmin@webileapps.com",
-    'password': "webile@123"})
-  })
-  result=await result.json();
-  console.log("result:",result)
-  console.log("result")
-  localStorage.setItem("user-info",JSON.stringify(result))
-
-
-
-}
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="sm">
         <Typography component="div" style={{ boxShadow: "10px 8px 10px  10px #aaaaaa", backgroundColor: 'white', height: '400px', marginTop: "36%", width: "600px", height: "500px", marginTop: "130px", borderRadius: "10px" }} >
           <div classname="logincont" style={{ padding: "30px" }}>
-            <h2>Admin Login</h2>
+            <h2>Admin Login  </h2>
             <br />
+
             <TextField
               id="outlined-full-width"
               label="Email Address
