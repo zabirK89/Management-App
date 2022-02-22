@@ -8,13 +8,14 @@ export const AuthProvider = ({ children }) => {
   let navigate = useNavigate();
   let login = async (e) => {
     e.preventDefault();
-    console.log('result');
-    console.log(email, password);
+    
+
     try {
       const proxy = 'https://cors-anywhere.herokuapp.com/';
       const mainurl = 'https://lms-dev.webileapps.io';
+      console.log(email, password);
       let result = await fetch(
-        `https://react-gnjfdf.stackblitz.io/api/users/admin/login`,
+        `https://lms-dev.webileapps.io/api/users/admin/login`,
         {
           method: 'POST',
           headers: {
@@ -27,6 +28,7 @@ export const AuthProvider = ({ children }) => {
           }),
         }
       );
+      console.log(result);
       result = await result.json();
 
       setAuthToken(result.token);
