@@ -16,7 +16,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-// import Adduser from "./Adduser"
+
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
@@ -75,7 +75,7 @@ export default function UserContent() {
   Reload
       </Button>
 
-      <Adduser/>
+   
     </Stack>
     </div>
 
