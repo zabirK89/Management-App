@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     try {
 const proxy="https://cors-anywhere.herokuapp.com/"
 const mainurl="https://lms-dev.webileapps.io"
-      let result = await fetch(`${proxy}${mainurl}/api/users/admin/login`, {
+      let result = await fetch(`https://react-gnjfdf.stackblitz.io/api/users/admin/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
