@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
     console.log(email, password);
     try {
 
-      let result = await fetch("https://react-gnjfdf.stackblitz.io/api/users/admin/login", {
+      let result = await fetch("https://cors-anywhere.herokuapp.com/api/users/admin/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
