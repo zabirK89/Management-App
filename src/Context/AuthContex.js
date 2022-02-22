@@ -14,8 +14,9 @@ export const AuthProvider = ({ children }) => {
     console.log("result")
     console.log(email, password);
     try {
-
-      let result = await fetch("https://cors-anywhere.herokuapp.com/api/users/admin/login", {
+const proxy="https://cors-anywhere.herokuapp.com"
+const mainurl="https://lms-dev.webileapps.io"
+      let result = await fetch(`${proxy}${mainurl}/api/users/admin/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
