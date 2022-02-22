@@ -1,15 +1,12 @@
-import  { useContext, useState } from 'react';
 import React from "react";
-
+import  { useContext, useState } from 'react';
 import './style.css';
 import LoginPage from './Components/LoginPage';
 import Sidebar from './Components/Sidebar';
-import Tickets from "./Components/Tickets"
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Holiday from './Components/Holiday';
-import Assets from "./Components/Assets";
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Authcontext, { AuthProvider } from './Context/AuthContex';
 export default function App() {
+  let user = useContext(Authcontext)
   return (
     <BrowserRouter>
     <AuthProvider>
@@ -33,3 +30,8 @@ export default function App() {
   </BrowserRouter>
   );
 }
+
+// const ProtectRoute = ({ user, children }) => {
+
+//   return user == null ? <Navigate to="/"></Navigate> : children;
+// }

@@ -8,22 +8,32 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Table from '../Components/Content';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import InputIcon from '@mui/icons-material/Input';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import DevicesIcon from '@mui/icons-material/Devices';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import Adduser from "./Adduser"
+import Authcontext from '../Context/AuthContex';
 const drawerWidth = 240;
 
 export default function ClippedDrawer() {
+  let {authToken}=React.useContext(Authcontext)
+  console.log({authToken});
+  let navigate = useNavigate()
+  function logout() {
+    console.log("clicked")
+   
+    navigate("/")
+}
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar id='header'
         position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        sx={{ zIndex: (theme) => theme.zIndex.drawer - 1 }}
         style={{ shadow: 'none', backdroundColor: 'white' }}
    
       >
@@ -32,7 +42,7 @@ export default function ClippedDrawer() {
           <Typography variant="h6" noWrap component="div">
             <div className="header-item">
           <Avatar style={{marginRight:"25px"}}  id="a"/> 
-          <InputIcon  style={{color:"#a7b8ab"}} id="a"/>
+          <InputIcon  style={{color:"#a7b8ab"}} onClick={logout} id="a"/>
           </div>
           </Typography>
         
@@ -75,7 +85,7 @@ export default function ClippedDrawer() {
           <List className="options">
           <Link to="/admin"  style={{ textDecoration: 'none',color:"black" }}>
               <div style={{display: "flex",height:"40px"}} id="a">
-              <PeopleAltIcon style={{marginLeft:"7px",marginRight:"10px"}}/>   Users
+              <PeopleAltIcon style={{marginLeft:"7px",marginRight:"10px"}}/>   Users 
               </div>
               </Link>
               <Link to="/holiday" style={{ textDecoration: 'none',color:"black" }}>

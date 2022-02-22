@@ -1,4 +1,4 @@
-
+import React from "react"
 import { createContext, useState, useEffect } from "react";
 const Authcontext = createContext()
 import { useNavigate } from 'react-router-dom';
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
     console.log(email, password);
     try {
 
-      let result = await fetch("http://localhost:3000/api/users/admin/login", {
+      let result = await fetch("https://react-gnjfdf.stackblitz.io/api/users/admin/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,12 +37,12 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("authToken", JSON.stringify(result))
       setUser("a")
       navigate("/admin")
-      if (email === "webileadmin@webileapps.com" && password === "webile@123") {
-        navigate('/admin');
-      } else {
-        // alert("enter correct password")
-        navigate("/")
-      }
+      // if (email === "webileadmin@webileapps.com" && password === "webile@123") {
+      //   navigate('/admin');
+      // } else {
+      //   // alert("enter correct password")
+      //   navigate("/")
+      // }
 
     }
     catch (err) {

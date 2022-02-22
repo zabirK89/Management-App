@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
+import  { useState, useEffect } from 'react'
+import axios from "axios"
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
@@ -14,12 +16,33 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+// import Adduser from "./Adduser"
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
 
-export default function Table() {
+export default function UserContent() {
+  const [countries, setCountries] = useState([]);
+//   useEffect(() => {
+//     const fecthData = async () => {
+//          let result=await fetch("http://localhost:3000/api/users/admin/login",{
+//           method:'POST',
+//           headers:{
+//             'Content-Type':'application/json',
+//               "Accept":"application/json"
+//           },
+//           body:JSON.stringify({  "email": "webileadmin@webileapps.com",
+//           "password": "webile@123"})
+//         }).then(res => {
+//                 setCountries(res.data);
+//                 console.log(countries);
+//             });
+
+        
+//     };
+//     fecthData();
+// });
   return (
     <>
     <div>
@@ -51,7 +74,8 @@ export default function Table() {
       <Button variant="outlined" startIcon={<ReplayIcon />} style={{padding:"5px",height:"44px"}}>
   Reload
       </Button>
-     
+
+      <Adduser/>
     </Stack>
     </div>
 
