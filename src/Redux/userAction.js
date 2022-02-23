@@ -20,7 +20,7 @@ export const setPassword = (password) => {
  
 
 export const userLogin = (obj) => async (dispatch) => {
- 
+ const navigate=useNavigate()
   try {
 
     let result = await fetch("http://localhost:3000/api/users/admin/login", {
@@ -42,6 +42,12 @@ export const userLogin = (obj) => async (dispatch) => {
     // console.log(result.token);
     // localStorage.setItem('authToken', JSON.stringify(result));
    
+    if (email === "webileadmin@webileapps.com" && password === "webile@123") {
+        navigate('/admin');
+      } else {
+        // alert("enter correct password")
+        navigate("/")
+      }
 
     dispatch({
       type: "SET_TOKEN",
