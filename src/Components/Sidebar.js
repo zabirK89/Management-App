@@ -15,17 +15,14 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import DevicesIcon from '@mui/icons-material/Devices';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
-// import Adduser from "./Adduser"
-import Authcontext from '../Context/AuthContex';
+
 const drawerWidth = 240;
 
 export default function ClippedDrawer() {
-  let {authToken}=React.useContext(Authcontext)
-  console.log({authToken});
   let navigate = useNavigate()
   function logout() {
     console.log("clicked")
-   
+    localStorage.clear();
     navigate("/")
 }
   return (
