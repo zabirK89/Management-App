@@ -7,12 +7,10 @@ import Button from '@material-ui/core/Button';
 import Divider from '@mui/material/Divider';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
-import Authcontext from "../Context/AuthContex";
+
 export default function header() {
 
-  let { login } = useContext(Authcontext)
-  let { changeemail } = useContext(Authcontext)
-  let { changepassword } = useContext(Authcontext)
+
 
   return (
     <React.Fragment>
@@ -38,7 +36,7 @@ export default function header() {
               }}
               variant="outlined"
               type="email"
-              onChange={changeemail}
+        
             />
             <br />
             <TextField
@@ -52,12 +50,12 @@ export default function header() {
               }}
               variant="outlined"
               type="password"
-              onChange={changepassword}
+    
             />
             <br />
             <br />
             <Link to="/admin" style={{ textDecoration: 'none' }}>
-              <Button variant="contained" color="primary" style={{ width: "550px" }} onClick={login}>
+              <Button variant="contained" color="primary" style={{ width: "550px" }} >
                 Login
               </Button>
             </Link>

@@ -7,18 +7,15 @@ import Tickets from "./Components/Tickets"
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Holiday from './Components/Holiday';
 import Assets from "./Components/Assets";
-import Authcontext, { AuthProvider } from './Context/AuthContex';
+
 
 export default function App() {
-  // const info=useGetAllPostQuery()
-  // console.log(info)
-  // const [user, setUser] = useState(null);
+ 
   const token= window.localStorage.getItem('authToken')
-  // console.log(token)
-  // let user = useContext(Authcontext)
+
   return (
     <BrowserRouter>
-      <AuthProvider>
+   
         <Routes>
 
           <Route path="/" element={<LoginPage  ></LoginPage>} />
@@ -35,7 +32,7 @@ export default function App() {
         <Route path="/assets" element={<Assets />} /> */}
 
         </Routes>
-      </AuthProvider>
+ 
     </BrowserRouter>
   );
 }
