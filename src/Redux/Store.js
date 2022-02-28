@@ -1,22 +1,37 @@
 
 import { applyMiddleware, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { createBrowserHistory } from 'history';
+
 import {middleWareDispatch} from "./middlewares"
 import {rootReducer} from "./Reducer/Rootreducer"
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
+export const history = createBrowserHistory();
 const persist = {
     key: 'wa-user',
     storage,
     whitelist: ['authReducer'],
   };
 
-  const persistedReducer = persistReducer(persist, rootReducer);
+  // const persistedReducer = persistReducer(persist, rootReducer);
 
-  export const store = createStore(
-    rootReducer,
-    applyMiddleware(thunk, middleWareDispatch),
-  );
-  export const persistor = persistStore(store);
-  export default store;
+  // export const store = createStore(
+  //   rootReducer,
+  //   applyMiddleware(thunk, middleWareDispatch),
+  // );
+  // export const persistor = persistStore(store);
+  // export default store;
   
+
+
+
+const persistedReducer = persistReducer(persist, rootReducer(connectRouter(history)));
+
+export const store = createStore(
+  persistedReducer,
+  applyMiddleware(thunk, middleWareDispatch, routerMiddleware(history)),
+);
+export const persistor = persistStore(store);
+export default store;
