@@ -1,7 +1,7 @@
 import {Fetching_Api} from "../middlewares"
 import  {Fetch_users} from "../Type/usertype"
 
-export const userLogin=(body)=>async(dispatch)=>{
+export const getusers = ()=>async(dispatch)=>{
     console.log("accessed")
 try{
 const users=await dispatch({
