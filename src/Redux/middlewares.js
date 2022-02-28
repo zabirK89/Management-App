@@ -1,4 +1,4 @@
-import { LOGOUT_SUCCESS } from "./Type/logintype"
+
 
 const baseurl = `http://localhost:3000/api`
 export const Fetching_Api = 'Fetching_Api';

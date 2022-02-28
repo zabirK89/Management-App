@@ -5,13 +5,13 @@ import {middleWareDispatch} from "./middlewares"
 import {rootReducer} from "./Reducer/Rootreducer"
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
-const persistConfig = {
+const persist = {
     key: 'wa-user',
     storage,
     whitelist: ['authReducer'],
   };
 
-  const persistedReducer = persistReducer(persistConfig, rootReducer);
+  const persistedReducer = persistReducer(persist, rootReducer);
 
   export const store = createStore(
     rootReducer,
