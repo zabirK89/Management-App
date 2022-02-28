@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import  { useState, useEffect } from 'react'
-import axios from "axios"
+import  { useState  } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
@@ -17,32 +17,27 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+import {useEffect} from "react"
+import {getusers} from "../Redux/Action/useraction"
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
 
 
 export default function UserContent() {
-  const [countries, setCountries] = useState([]);
-//   useEffect(() => {
-//     const fecthData = async () => {
-//          let result=await fetch("http://localhost:3000/api/users/admin/login",{
-//           method:'POST',
-//           headers:{
-//             'Content-Type':'application/json',
-//               "Accept":"application/json"
-//           },
-//           body:JSON.stringify({  "email": "webileadmin@webileapps.com",
-//           "password": "webile@123"})
-//         }).then(res => {
-//                 setCountries(res.data);
-//                 console.log(countries);
-//             });
+  const dispatch=useDispatch()
 
-        
-//     };
-//     fecthData();
-// });
+useEffect(()=>{
+async function Users(){
+  try {
+    await dispatch(getusers())
+
+  }catch(error){
+    console.log(error)
+  }
+}
+Users()
+})
   return (
     <>
     <div>
@@ -75,7 +70,7 @@ export default function UserContent() {
   Reload
       </Button>
 
-   
+
     </Stack>
     </div>
 
