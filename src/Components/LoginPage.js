@@ -10,13 +10,9 @@ import { Grid, Paper , Box, Stack } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
-import * as yup from 'yup';
 import {userLogin} from "../Redux/Action/Loginaction"
 
-const validationSchema = yup.object().shape({
-  userId: yup.string().required('Email is required'),
-  password: yup.string().required('Password is required'),
-});
+
 
 
 export default function header() {
@@ -27,11 +23,9 @@ export default function header() {
           const { userId, password } = values;
       const reqBody = { email: userId, password };
       dispatch(userLogin(reqBody));
-      // setSubmitting(false);
       console.log(reqBody);
 
     } catch (error) {
-      // setSubmitting(false);
       console.error(error);
     }
   };
@@ -44,7 +38,6 @@ export default function header() {
           <div classname="logincont" style={{ padding: "30px" }}>
           <Formik
           onSubmit={onSubmit}
-          validationSchema={validationSchema}
           initialValues={initialValues}
           >
           {({ handleSubmit,handleChange,values }) => (
