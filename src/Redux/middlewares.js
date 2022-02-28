@@ -1,9 +1,9 @@
 
 
-const baseurl = `http://localhost:3000/api`
+const baseurl = `https://react-gnjfdf.stackblitz.io/api`
 export const Fetching_Api = 'Fetching_Api';
 
-// const response=await fetch("https://lms-dev.webileapps.io/api/users/admin/login")
+// const response=await fetch("https://react-gnjfdf.stackblitz.io/api/api/users/admin/login")
 
 
 const DEFAULT_HEADERS = {
