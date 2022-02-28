@@ -2,7 +2,7 @@
   "name": "react",
   "version": "0.0.0",
   "private": true,
-  "proxy": "https://lms-dev.webileapps.io",
+
   "dependencies": {
     "@babel/core": "7.17.2",
     "@emotion/react": "11.7.1",
