@@ -1,13 +1,13 @@
 
-import { CALL_API } from "../middlewares";
+import { Fetching_Api } from "../middlewares";
 import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../Type/logintype"
 
 
 export const userLogin=(body)=>async(dispatch)=>{
     try{
         const data=await dispatch({
-         type:CALL_API,
-         [CALL_API] : {  url:`/users/admin/login`,
+         type:Fetching_Api,
+         [Fetching_Api] : {  url:`/users/admin/login`,
             method:"POST",
             body,
         }

@@ -1,7 +1,7 @@
 import { LOGOUT_SUCCESS } from "./Type/logintype"
 
 const baseurl = `http://localhost:3000/api`
-export const CALL_API = 'CALL_API';
+export const Fetching_Api = 'Fetching_Api';
 
 // const response=await fetch("https://lms-dev.webileapps.io/api/users/admin/login")
 
@@ -41,12 +41,12 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
 
 
 export const middleWareDispatch = (store) => (next) => async (action) => {
-    if (typeof action[CALL_API] === 'undefined') {
+    if (typeof action[Fetching_Api] === 'undefined') {
         return next(action);
     }
-    const { silent = false } = action[CALL_API];
+    const { silent = false } = action[Fetching_Api];
     try {
-        const { url, body, method = 'POST', json, contentType } = action[CALL_API];
+        const { url, body, method = 'POST', json, contentType } = action[Fetching_Api];
         console.log("body = ", body);
         const { token } = store.getState();
 
