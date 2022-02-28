@@ -1,6 +1,6 @@
 import { LOGOUT_SUCCESS } from "./Type/logintype"
 
-const baseurl = `http://localhost:3000/api`
+const baseurl = `https://react-gnjfdf.stackblitz.io/api`
 export const CALL_API = 'CALL_API';
 
 // const response=await fetch("https://lms-dev.webileapps.io/api/users/admin/login")
