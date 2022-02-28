@@ -85,7 +85,7 @@ import { LOGOUT_SUCCESS } from "./Type/logintype"
 const baseurl = `https://lms-dev.webileapps.io/api`
 export const Fetching_Api = 'Fetching_Api';
 
-// const response=await fetch("https://lms-dev.webileapps.io/api/users/admin/login")
+
 
 
 const DEFAULT_HEADERS = {
@@ -117,7 +117,8 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
         return { data: result };
     } else if (contentType === 'application/pdf') {
         result = await response.blob();
-        console.log("Result ---->", result);2
+        console.log("Result ---->", result);
+        localStorage.setItem('token',result.token);
         return { data: result };
     }
 }
@@ -132,6 +133,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
         const { url, body, method = 'POST', json, contentType } = action[Fetching_Api];
         console.log("body = ", body);
         const { token } = store.getState();
+
 
         const headerContent = {
             ...(token ? { Authorization: `Bearer ${token}` } : {}),
