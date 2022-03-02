@@ -118,7 +118,7 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
     } else if (contentType === 'application/pdf') {
         result = await response.blob();
         console.log("Result ---->", result);
-        localStorage.setItem('token',result.token);
+        // localStorage.setItem('token',result.token);
         return { data: result };
     }
 }
