@@ -27,12 +27,12 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
         result = await response.json();
         console.log("Result ---->", result.token);
         console.log(result);
-        localStorage.setItem('token',result.token);
+        localStorage.setItem('authReducer',result);
         return { data: result };
     } else if (contentType === 'application/pdf') {
         result = await response.blob();
         console.log("Result ---->", result);
-        localStorage.setItem('token',result.token);
+        localStorage.setItem('authReducer',result);
         return { data: result };
     }
 }
@@ -45,7 +45,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
     try {
         const { url, body, method = 'POST', json, contentType } = action[Fetching_Api];
         console.log("body = ", body);
-        const { token } = store.getState();
+        const { authReducer:token } = store.getState();
 
 
         const headerContent = {
