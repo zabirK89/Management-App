@@ -24,7 +24,7 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
   
     let result;
     if (typeof contentType === 'undefined') {
-        result = await response.json();
+        result = await response.json.stringify();
         console.log("Result ---->", result.token);
         console.log(result);
         localStorage.setItem('authReducer',result);
