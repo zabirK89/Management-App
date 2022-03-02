@@ -46,7 +46,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
         const { url, body, method = 'POST', json, contentType } = action[Fetching_Api];
         console.log("body = ", body);
         const { token:token } = store.getState();
-            console.log("token generated=======>".token.token)
+            console.log("token generated=======>",token.token)
 
         const headerContent = {
             ...(token ? { Authorization: `Bearer ${token}` } : {}),
