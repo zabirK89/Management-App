@@ -24,15 +24,15 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
   
     let result;
     if (typeof contentType === 'undefined') {
-        result = await response.json.stringify();
+        result = await response.json();
         console.log("Result ---->", result.token);
         console.log(result);
-        localStorage.setItem('authReducer',result);
+        localStorage.setItem('authReducer',result.stringify);
         return { data: result };
     } else if (contentType === 'application/pdf') {
         result = await response.blob();
         console.log("Result ---->", result);
-        localStorage.setItem('authReducer',result);
+        localStorage.setItem('authReducer',result.stringify);
         return { data: result };
     }
 }
