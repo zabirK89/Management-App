@@ -57,7 +57,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
             headerContent,
             config: {
                 method,
-                body: JSON.stringify(body),
+                body: JSON.parse(body),
             },
             json,
             contentType,
