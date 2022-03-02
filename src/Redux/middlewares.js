@@ -31,7 +31,7 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
         result = await response.json();
         console.log("Result ---->", result.token);
         console.log(result);
-        localStorage.setItem('token',result.token);
+        // localStorage.setItem('token',result.token);
         return { data: result };
     } else if (contentType === 'application/pdf') {
         result = await response.blob();
