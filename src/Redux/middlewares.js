@@ -45,7 +45,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
     try {
         const { url, body, method = 'POST', json, contentType } = action[Fetching_Api];
         console.log("body = ", body);
-        const { authReducer:token } = store.getState();
+        const { token:token } = store.getState();
 
 
         const headerContent = {
