@@ -54,7 +54,6 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
         };
         const payload = {
             endpoint: url,
-            
             headerContent,
             config: {
                 method,
