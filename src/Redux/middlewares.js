@@ -26,11 +26,13 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
     if (typeof contentType === 'undefined') {
         result = await response.json();
         console.log("Result ---->", result.token);
+        console.log(result);
       
         return { data: result };
     } else if (contentType === 'application/pdf') {
         result = await response.blob();
         console.log("Result ---->", result);
+        // localStorage.setItem('authReducer',result);
         return { data: result };
     }
 }
