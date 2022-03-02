@@ -27,12 +27,10 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
         result = await response.json();
         console.log("Result ---->", result.token);
         console.log(result);
-        // localStorage.setItem('authReducer',result);
         return { data: result };
     } else if (contentType === 'application/pdf') {
         result = await response.blob();
         console.log("Result ---->", result);
-        // localStorage.setItem('authReducer',result);
         return { data: result };
     }
 }
@@ -46,7 +44,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
         const { url, body, method = 'POST', json, contentType } = action[Fetching_Api];
         console.log("body = ", body);
         const { token:token } = store.getState();
-            console.log("token generated=======>",token.token)
+        
 
         const headerContent = {
             ...(token ? { Authorization: `Bearer ${token.token}` } : {}),
@@ -63,7 +61,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
             contentType,
         };
         const { data } = await invokeAPI(payload);
-        // console.log(url)
+   
         return data;
     } catch (error) {
         console.log(error);
