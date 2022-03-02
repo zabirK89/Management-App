@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import Table from '../Components/Content';
+import Table from '../Components/UserContent.js';
 import { Link ,useNavigate} from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import InputIcon from '@mui/icons-material/Input';
