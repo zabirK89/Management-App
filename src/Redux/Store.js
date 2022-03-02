@@ -14,15 +14,6 @@ const persist = {
     storage,
     whitelist: ['authReducer'],
   };
-
-  // const persistedReducer = persistReducer(persist, rootReducer);
-
-  // export const store = createStore(
-  //   rootReducer,
-  //   applyMiddleware(thunk, middleWareDispatch),
-  // );
-  // export const persistor = persistStore(store);
-  // export default store;
   
 
 
