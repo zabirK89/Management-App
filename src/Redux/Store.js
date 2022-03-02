@@ -9,7 +9,7 @@ import {rootReducer} from "./Reducer/Rootreducer"
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 export const history = createBrowserHistory();
-const persist = {
+const persistConfig = {
     key: 'wa-user',
     storage,
     whitelist: ['authReducer'],
@@ -18,7 +18,7 @@ const persist = {
 
 
 
-const persistedReducer = persistReducer(persist, rootReducer(connectRouter(history)));
+const persistedReducer = persistReducer(persistConfig, rootReducer(connectRouter(history)));
 
 export const store = createStore(
   persistedReducer,
