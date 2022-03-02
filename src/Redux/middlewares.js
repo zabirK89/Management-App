@@ -49,7 +49,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
             console.log(token.token)
 
         const headerContent = {
-            ...(token ? { Authorization: `Bearer ${token.token}` } : {}),
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
             ...DEFAULT_HEADERS,
         };
         const payload = {
