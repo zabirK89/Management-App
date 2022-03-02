@@ -2,10 +2,6 @@
 
 const baseurl = `https://lms-dev.webileapps.io/api`
 export const Fetching_Api = 'Fetching_Api';
-
-
-
-
 const DEFAULT_HEADERS = {
     Accept: "application/json",
     "Content-Type": "application/json",
@@ -41,7 +37,6 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
     }
 }
 
-
 export const middleWareDispatch = (store) => (next) => async (action) => {
     if (typeof action[Fetching_Api] === 'undefined') {
         return next(action);
@@ -69,7 +64,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
             contentType,
         };
         const { data } = await invokeAPI(payload);
-        console.log(url)
+        // console.log(url)
         return data;
     } catch (error) {
         console.log(error);
