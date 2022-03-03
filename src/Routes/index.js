@@ -33,14 +33,7 @@ function AppRoutes() {
             </ProtectedRoute>
           }
         ></Route>
-        <Route
-          path="/"
-          element={
-            <RedirectRoute isLoggedIn={role}>
-              <LoginPage />
-            </RedirectRoute>
-          }
-        ></Route>
+        <Route path="/" element={<LoginPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
