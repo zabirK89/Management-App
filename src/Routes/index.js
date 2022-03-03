@@ -13,7 +13,7 @@ import Sidebar from '../Components/Sidebar';
 import LoginPage from '../Components/LoginPage';
 
 import ProtectedRoute from './ProtectedRoute';
-import RedirectRoute from './redirect';
+
 function AppRoutes() {
   const role = useSelector((state) => {
     console.log(state);
