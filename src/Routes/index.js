@@ -26,19 +26,6 @@ function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route
-          exact
-          path="/"
-          render={(props) =>
-            role && role != 'super_admin' ? (
-              <Redirect {...props} to="/" from={props.location.pathname} />
-            ) : (
-              <Redirect {...props} to="/admin" from={props.location.pathname} />
-            )
-          }
-        ></Route>
-        {/* <ProtectedRoute path="/" component={LoginPage} /> */}
-
-        <Route
           path="/admin"
           element={
             <ProtectedRoute isLoggedIn={role}>
