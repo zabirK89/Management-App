@@ -3,24 +3,19 @@ import React from 'react';
 import {
   Redirect,
   Route,
-  Router,
-  Switch,
   BrowserRouter,
   Routes,
 } from 'react-router-dom';
-
 import Sidebar from '../Components/Sidebar';
 import LoginPage from '../Components/LoginPage';
-
 import ProtectedRoute from './ProtectedRoute';
 
 function AppRoutes() {
   const role = useSelector((state) => {
-    console.log(state);
     return state.token.role;
   });
 
-  console.log(role);
+  // console.log(role);
 
   return (
     <BrowserRouter>
