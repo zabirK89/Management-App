@@ -38,7 +38,7 @@ async function Users(){
   }
 }
 Users()
-})
+},[])
   return (
     <>
     <div>
@@ -90,22 +90,22 @@ Users()
             <TableCell align="right">Satus Action</TableCell>
           </TableRow>
         </TableHead>
-        {/* <TableBody>
-          {rows.map((row) => (
+        <TableBody>
+          {users.users.map((user) => (
             <TableRow
-              key={row.name}
+              key={user.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.name}
+                {user.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{user.email}</TableCell>
+              <TableCell align="right">{user.designation}</TableCell>
+              <TableCell align="right">{user.joining_date}</TableCell>
+              {/* <TableCell align="right">{}</TableCell> */}
             </TableRow>
           ))}
-        </TableBody> */}
+        </TableBody>
       </Table>
     </TableContainer>
     </>
