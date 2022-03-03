@@ -102,7 +102,7 @@ Users()
               <TableCell align="right">{user.email}</TableCell>
               <TableCell align="right">{user.designation}</TableCell>
               <TableCell align="right">{user.joining_date}</TableCell>
-              {/* <TableCell align="right">{}</TableCell> */}
+              {/* <TableCell align="right">{user.manager.name}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>
