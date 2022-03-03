@@ -103,6 +103,14 @@ Users()
               <TableCell align="right">{user.designation}</TableCell>
               <TableCell align="right">{user.joining_date}</TableCell>
               <TableCell align="right">{}</TableCell>
+              <TableCell align="right">   <Button>
+                  
+                    View
+                  </Button>
+                  <Button>
+                    Update
+                  </Button>
+</TableCell>
             </TableRow>
           ))}
         </TableBody>
