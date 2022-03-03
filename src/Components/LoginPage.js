@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import { Formik } from 'formik';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Grid, Paper, Box, Stack } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import * as yup from 'yup';
@@ -18,6 +18,7 @@ const validationSchema = yup.object().shape({
 });
 
 export default function header() {
+  const navigate = useNavigate();
   const initialValues = { userId: '', password: '' };
   const dispatch = useDispatch();
   const onSubmit = (values) => {
@@ -25,6 +26,7 @@ export default function header() {
       const { userId, password } = values;
       const reqBody = { email: userId, password };
       dispatch(userLogin(reqBody));
+      navigate("/admin");
       // setSubmitting(false);
       console.log(reqBody);
     } catch (error) {
