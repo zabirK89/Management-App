@@ -26,8 +26,8 @@ function createData(name, calories, fat, carbs, protein) {
 
 export default function UserContent() {
   const dispatch=useDispatch()
-// const users=useSelector((state)=>state.users)
-// console.log("users=====>",users)
+const users=useSelector((state)=>state.users)
+console.log("users=====>",users)
 useEffect(()=>{
 async function Users(){
   try {
