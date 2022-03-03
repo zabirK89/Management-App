@@ -18,12 +18,13 @@ const validationSchema = yup.object().shape({
 });
 
 export default function header() {
-  useEffect(() => {
-    navigate('/admin');
-  }, [dispatch]);
+ 
   const navigate = useNavigate();
   const initialValues = { userId: '', password: '' };
   const dispatch = useDispatch();
+  useEffect(() => {
+    navigate('/admin');
+  }, [dispatch]);
   const onSubmit = (values) => {
     try {
       const { userId, password } = values;
