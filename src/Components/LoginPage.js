@@ -22,14 +22,12 @@ export default function header() {
   const navigate = useNavigate();
   const initialValues = { userId: '', password: '' };
   const dispatch = useDispatch();
-  useEffect(() => {
-    navigate('/admin');
-  }, [dispatch]);
+
   const onSubmit = (values) => {
     try {
       const { userId, password } = values;
       const reqBody = { email: userId, password };
-      dispatch(userLogin(reqBody));
+      dispatch(userLogin(reqBody, navigate));
 
       // setSubmitting(false);
       console.log(reqBody);
