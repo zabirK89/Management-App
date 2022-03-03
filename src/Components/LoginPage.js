@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -18,6 +18,9 @@ const validationSchema = yup.object().shape({
 });
 
 export default function header() {
+  useEffect(() => {
+    navigate('/admin');
+  }, [dispatch]);
   const navigate = useNavigate();
   const initialValues = { userId: '', password: '' };
   const dispatch = useDispatch();
@@ -26,7 +29,7 @@ export default function header() {
       const { userId, password } = values;
       const reqBody = { email: userId, password };
       dispatch(userLogin(reqBody));
-      navigate("/admin");
+
       // setSubmitting(false);
       console.log(reqBody);
     } catch (error) {
@@ -99,15 +102,15 @@ export default function header() {
                   <br />
                   <br />
                   {/* <Link to="admin" style={{ textDecoration: 'none' }}> */}
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      style={{ width: '550px' }}
-                      type="submit"
-                      label="Login"
-                    >
-                      Login In
-                    </Button>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    style={{ width: '550px' }}
+                    type="submit"
+                    label="Login"
+                  >
+                    Login In
+                  </Button>
                   {/* </Link> */}
                   <br />
                 </Box>
