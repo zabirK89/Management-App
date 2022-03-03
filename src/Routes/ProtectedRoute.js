@@ -1,26 +1,23 @@
-// import React from "react"
+// import React from 'react';
 // import { connect } from 'react-redux';
-// import {Redirect,Route} from "react-route"
+// import { Redirect, Route } from 'react-router';
 
-
-// function RedirectRoute({ Component, path = '', ...rest }) {
+// function ProtectedRoute({ component: Component, isLoggedIn, ...rest }) {
+//   console.log('isLoggedIn = ', isLoggedIn);
 //   return (
 //     <Route
 //       {...rest}
-//       render={(props) =>
-//         rest.isLoggedIn ? (
-//           <Redirect to="/" from={props.location.pathname} />
+//       render={({ location }) =>
+//         isLoggedIn ? (
+//           <Component {...rest} />
 //         ) : (
-//           <Component {...props} />
+//           <Redirect to={{ pathname: '/', state: { from: location } }} />
 //         )
 //       }
 //     />
 //   );
 // }
-
-
-
 // export default connect(
-//   ({ authReducer }) => ({ isLoggedIn: !!authReducer.token }),
-//   {},
+//   ({ token }) => ({ isLoggedIn: !!token.token }),
+//   {}
 // )(ProtectedRoute);

@@ -1,27 +1,42 @@
-// import LoginPage from '../Components/LoginPage';
-// import Sidebar from '../Components/Sidebar';
-// import ProtectedRoute from './ProtectedRoute';
+
+
+
+// import {  useSelector } from 'react-redux';
+// import React from "react"
 // import { Redirect, Route, Router, Switch } from 'react-router-dom';
-// function approuter() {
+
+// import Sidebar from "../Components/Sidebar"
+// import LoginPage from '../Components/LoginPage';
+// import { history } from '../Redux/Store';
+// import ProtectedRoute from './ProtectedRoute';
+// import RedirectRoute from './redirect';
+// function AppRoutes(){
+ 
+//   const { token } = useSelector((state) => state.token);
+//   const role = token;
+//   console.log(role);
+
 //   return (
 //     <Router history={history}>
-//     <Switch>
+//       <Switch>
 //       <Route
-//         exact
-//         path="/"
-//         render={(props) =>
-//           role && role != 'super_admin' ? (
-//             <Redirect {...props} to="/pendingLeaves" from={props.location.pathname} />
-//           ) : (
-//             <Redirect {...props} to="/admin" from={props.location.pathname} />
-//           )
-//         }
-//       ></Route>
-//       <ProtectedRoute path="/admin" component={Sidebar} />
-   
-//       <RedirectRoute path="/" component={LoginPage} />
-//     </Switch>
-//   </Router>
+//           exact
+//           path="/"
+//           render={(props) =>
+//             role && role != 'super_admin' ? (
+//               <Redirect {...props} to="/" from={props.location.pathname} />
+//             ) : (
+//               <Redirect {...props} to="/admin" from={props.location.pathname} />
+//             )
+//           }
+//         ></Route>
+//         {/* <ProtectedRoute path="/" component={LoginPage} /> */}
 
+//         <ProtectedRoute path="/admin" component={Sidebar} />
+//         <RedirectRoute path="/" component={ LoginPage} />
+//       </Switch>
+//     </Router>
 //   );
 // }
+
+// export default AppRoutes;
