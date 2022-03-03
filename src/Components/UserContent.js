@@ -3,6 +3,7 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import  { useState  } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
@@ -103,11 +104,25 @@ Users()
               <TableCell align="right">{user.designation}</TableCell>
               <TableCell align="right">{user.joining_date}</TableCell>
               <TableCell align="right">{}</TableCell>
-              <TableCell align="right">   <Button>
+              <TableCell align="right">   <Button
+                to={{
+                  pathname: `/admin/users/${user.id}`,
+                  state: { background: location },
+                }}
+                component={Link}
+
+              >
                   
                     View
                   </Button>
-                  <Button>
+                  <Button
+                   to={{
+                    pathname: `/admin/users/update/${user.id}`,
+                    state: { background: location },
+                  }}
+                  component={Link}
+
+                  >
                     Update
                   </Button>
 </TableCell>
