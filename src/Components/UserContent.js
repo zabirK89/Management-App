@@ -103,7 +103,7 @@ Users()
               <TableCell align="right">{user.designation}</TableCell>
               <TableCell align="right">{user.joining_date}</TableCell>
               <TableCell align="right">{}</TableCell>
-              <TableCell align="right">{}</TableCell>
+              {/* <TableCell align="right">{}</TableCell> */}
               <TableCell align="right">   <Button
                 to={{
                   pathname: `/admin/users/${user.id}`,
@@ -115,6 +115,7 @@ Users()
                   
                     View
                   </Button>
+                  <br/>
                   <Button
                    to={{
                     pathname: `/admin/users/update/${user.id}`,
