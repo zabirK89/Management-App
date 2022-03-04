@@ -18,9 +18,9 @@ export default function Router() {
   return (
     <>
       <Stack>
-        {/* <WAAppBar /> */}
+   
         <Stack direction="row" sx={{ mt: '67px' }}>
-          {/* <SideBar /> */}
+
           <Box
             sx={{
               width: '100%',
@@ -28,11 +28,9 @@ export default function Router() {
             }}
           >
             <Switch location={background || location}>
-              {/* <Route path={`${path}/add`} component={CreateUser} />
-          <Route path={`${path}/update/:id`} component={UpdateUser} /> */}
+          
               <Route path={`${path}/:id`} component={UserDetail} />
-              {/* <Route path={`${path}//manager:id`} component={UpdateManager} />
-          <Route exact path={path} component={UsersList} /> */}
+           
             </Switch>
             <Drawer
               open={!!background}
@@ -48,9 +46,6 @@ export default function Router() {
                 display="flex"
               >
                 <Switch>
-                  {/* <Route path={`${path}/add`} component={CreateUser} />
-              <Route path={`${path}/update/:id`} component={UpdateUser} />
-              <Route path={`${path}/manager/:id`} component={UpdateManager} /> */}
                   <Route path={`${path}/:id`} component={UserDetail} />
                 </Switch>
               </Box>
