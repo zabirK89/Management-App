@@ -18,9 +18,7 @@ export default function Router() {
   return (
     <>
       <Stack>
-   
         <Stack direction="row" sx={{ mt: '67px' }}>
-
           <Box
             sx={{
               width: '100%',
@@ -28,9 +26,7 @@ export default function Router() {
             }}
           >
             <Switch location={background || location}>
-          
               <Route path={`${path}/:id`} component={UserDetail} />
-           
             </Switch>
             <Drawer
               open={!!background}
