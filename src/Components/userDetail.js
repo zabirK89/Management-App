@@ -60,6 +60,7 @@ function DataColumnValues1({
 
 export default function UserDetail(){
   const { id } = useParams();
+  console.log("id======>",id)
   const dispatch = useDispatch()
   const [users_details, setDetails] = useState();
   const [showProgress, setShowProgress] = useState(false); 
