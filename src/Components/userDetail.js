@@ -16,9 +16,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
 import {onGetUsersbyId} from "../Redux/Action/useraction"
-
-
-
 function DataColumnValues1({
   dv1,
   dv2,
