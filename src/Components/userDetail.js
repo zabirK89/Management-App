@@ -62,19 +62,21 @@ export default function UserDetail(){
   const { id } = useParams();
   const dispatch = useDispatch()
   const [users_details, setDetails] = useState();
-  // const [showProgress, setShowProgress] = useState(false); 
+  const [showProgress, setShowProgress] = useState(false); 
   const { enqueueSnackbar } = useSnackbar();
   useEffect(() => {
     async function getUsersbyId() {
       try {
-        // setShowProgress(true);
+        setShowProgress(true);
         const user_details = await dispatch(onGetUsersbyId(id));
         setDetails(user_details);
       } catch (error) {
         enqueueSnackbar((error).message, {
           variant: 'error',
         });
-      } 
+      } finally {
+        setShowProgress(false);
+      }
     }
     getUsersbyId();
   }, [id]);
@@ -84,8 +86,8 @@ export default function UserDetail(){
 
   return (
     <>
-      <TitleBar title="Users Details" />
-   
+   <h5>User Detail</h5>
+      {showProgress && <LinearProgress />}
 
       {users_details && (
         <Stack sx={{ paddingX: 2 }}>
