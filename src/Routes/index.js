@@ -9,6 +9,7 @@ import {
 import Sidebar from '../Components/Sidebar';
 import LoginPage from '../Components/LoginPage';
 import ProtectedRoute from './ProtectedRoute';
+import UserDetail from "../Components/UserDetail"
 
 function AppRoutes() {
   const role = useSelector((state) => {
@@ -28,6 +29,7 @@ function AppRoutes() {
             </ProtectedRoute>
           }
         ></Route>
+        <Route path="/admin/users/:id" element={<UserDetail/>}/>
         <Route path="/" element={<LoginPage />}></Route>
       </Routes>
     </BrowserRouter>

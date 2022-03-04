@@ -9,6 +9,8 @@ import {
   useRouteMatch,
 } from 'react-router';
 
+import { Redirect, Route, BrowserRouter, Routes } from 'react-router-dom';
+
 export default function Router() {
   const { path } = useRouteMatch();
   console.log('path====>', path);
@@ -25,9 +27,12 @@ export default function Router() {
               margin: '30px',
             }}
           >
-            <Switch location={background || location}>
-              <Route path={`${path}/:id`} component={UserDetail} />
-            </Switch>
+       
+                <Switch location={background || location}>
+                <Route path={`${path}/:id`} component={UserDetail} />
+                </Switch>
+             
+
             <Drawer
               open={!!background}
               anchor="right"
@@ -41,9 +46,9 @@ export default function Router() {
                 flexDirection={'column'}
                 display="flex"
               >
-                <Switch>
+                {/* <Switch>
                   <Route path={`${path}/:id`} component={UserDetail} />
-                </Switch>
+                </Switch> */}
               </Box>
             </Drawer>
           </Box>
