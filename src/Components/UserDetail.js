@@ -15,17 +15,8 @@ import { useSnackbar } from 'notistack';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
-import {onGetUsersbyId} from "../Redux/Action/useraction"
-function DataColumnValues1({
-  dv1,
-  dv2,
-  dv3,
-  dv4,
-  dv5,
-  dv6,
-  dv7,
-  dv8,
-}) {
+import { onGetUsersbyId } from '../Redux/Action/useraction';
+function DataColumnValues1({ dv1, dv2, dv3, dv4, dv5, dv6, dv7, dv8 }) {
   return (
     <Grid container direction="column">
       <Grid item xs={6}>
@@ -56,14 +47,13 @@ function DataColumnValues1({
   );
 }
 
-
-
-export default function UserDetail(){
+function UserDetail() {
+  console.log('Rendering UserDetails!!');
   const { id } = useParams();
-  console.log("id======>",id)
-  const dispatch = useDispatch()
+  console.log('id======>', id);
+  const dispatch = useDispatch();
   const [users_details, setDetails] = useState();
-  const [showProgress, setShowProgress] = useState(false); 
+  const [showProgress, setShowProgress] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
   useEffect(() => {
     async function getUsersbyId() {
@@ -72,7 +62,7 @@ export default function UserDetail(){
         const user_details = await dispatch(onGetUsersbyId(id));
         setDetails(user_details);
       } catch (error) {
-        enqueueSnackbar((error).message, {
+        enqueueSnackbar(error.message, {
           variant: 'error',
         });
       } finally {
@@ -82,12 +72,9 @@ export default function UserDetail(){
     getUsersbyId();
   }, [id]);
 
-
-
-
   return (
     <>
-   <h5>User Detail</h5>
+      <h5>User Detail</h5>
       {showProgress && <LinearProgress />}
 
       {users_details && (
@@ -99,13 +86,19 @@ export default function UserDetail(){
                 dv2={{ label: 'Role', value: users_details.role }}
                 dv3={{ label: 'Name', value: users_details.name }}
                 dv4={{ label: 'Email', value: users_details.email }}
-                dv5={{ label: 'Joining Date', value:users_details.joining_date}}
+                dv5={{
+                  label: 'Joining Date',
+                  value: users_details.joining_date,
+                }}
                 dv6={{
                   label: 'Created At',
                   value: users_details.additionalDetails?.createdAt,
                 }}
                 dv7={{ label: 'Designation', value: users_details.designation }}
-                dv8={{ label: 'Type', value: users_details.additionalDetails?.type }}
+                dv8={{
+                  label: 'Type',
+                  value: users_details.additionalDetails?.type,
+                }}
               />
             </Grid>
           </Grid>
@@ -139,3 +132,4 @@ export default function UserDetail(){
     </>
   );
 }
+export default UserDetail;
