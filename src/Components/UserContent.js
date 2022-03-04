@@ -24,7 +24,7 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 
-export default function UserContent() {
+export default function UserDetail() {
   const dispatch=useDispatch()
 const users=useSelector((state)=>state.users)
 console.log("users=====>",users)
