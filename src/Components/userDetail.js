@@ -62,21 +62,19 @@ export default function UserDetail(){
   const { id } = useParams();
   const dispatch = useDispatch()
   const [users_details, setDetails] = useState();
-  const [showProgress, setShowProgress] = useState(false);
+  // const [showProgress, setShowProgress] = useState(false); 
   const { enqueueSnackbar } = useSnackbar();
   useEffect(() => {
     async function getUsersbyId() {
       try {
-        setShowProgress(true);
+        // setShowProgress(true);
         const user_details = await dispatch(onGetUsersbyId(id));
         setDetails(user_details);
       } catch (error) {
         enqueueSnackbar((error).message, {
           variant: 'error',
         });
-      } finally {
-        setShowProgress(false);
-      }
+      } 
     }
     getUsersbyId();
   }, [id]);
@@ -87,7 +85,7 @@ export default function UserDetail(){
   return (
     <>
       <TitleBar title="Users Details" />
-      {showProgress && <LinearProgress />}
+   
 
       {users_details && (
         <Stack sx={{ paddingX: 2 }}>
@@ -98,10 +96,10 @@ export default function UserDetail(){
                 dv2={{ label: 'Role', value: users_details.role }}
                 dv3={{ label: 'Name', value: users_details.name }}
                 dv4={{ label: 'Email', value: users_details.email }}
-                dv5={{ label: 'Joining Date', value: formatShortDate(users_details.joining_date) }}
+                dv5={{ label: 'Joining Date', value:users_details.joining_date}}
                 dv6={{
                   label: 'Created At',
-                  value: formatShortDate(users_details.additionalDetails?.createdAt),
+                  value: users_details.additionalDetails?.createdAt,
                 }}
                 dv7={{ label: 'Designation', value: users_details.designation }}
                 dv8={{ label: 'Type', value: users_details.additionalDetails?.type }}

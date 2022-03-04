@@ -1,17 +1,13 @@
 import { Box, Drawer, Stack } from '@mui/material';
-import { Location } from 'history';
 import { Route, Switch, useHistory, useLocation, useRouteMatch } from 'react-router';
 import userDetail from "./userDetail"
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-
 export default function Router(){
 
   const { path } = useRouteMatch();
+  console.log("path====>",path)
   const history = useHistory();
-  const dispatch = useDispatch();
   const location = useLocation();
-
+  const background = location.state && location.state.background;
 return (
   <>
   <Stack>
