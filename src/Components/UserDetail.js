@@ -134,9 +134,9 @@ function UserDetail() {
                 {
                   users_details.history?.map((hist) => (
                   <TableRow key={hist.id}>
-                    <TableCell>{history.userId}</TableCell>
-                    <TableCell>{history.description}</TableCell>
-                    <TableCell>{history.changedBy}</TableCell>
+                    <TableCell>{hist.userId}</TableCell>
+                    <TableCell>{hist.description}</TableCell>
+                    <TableCell>{hist.changedBy.name}</TableCell>
                   </TableRow>
                 ))}
               </TableBody> 
