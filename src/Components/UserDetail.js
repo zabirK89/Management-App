@@ -68,6 +68,7 @@ function UserDetail() {
   const [users_details, setDetails] = useState();
   const [showProgress, setShowProgress] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
+ 
   useEffect(() => {
     async function getUsersbyId() {
       try {
@@ -84,7 +85,7 @@ function UserDetail() {
     }
     getUsersbyId();
   }, [id]);
-
+  console.log("userdetail===>",users_details)
   return (
     <>
       <h5>User Detail</h5>
@@ -129,15 +130,16 @@ function UserDetail() {
                   ))}
                 </TableRow>
               </TableHead>
-              {/* <TableBody component={Paper}>
-                {users_details.history?.map((history) => (
-                  <TableRow key={history.id}>
+               <TableBody component={Paper}>
+                {
+                  users_details.history?.map((hist) => (
+                  <TableRow key={hist.id}>
                     <TableCell>{history.userId}</TableCell>
                     <TableCell>{history.description}</TableCell>
                     <TableCell>{history.changedBy}</TableCell>
                   </TableRow>
                 ))}
-              </TableBody> */}
+              </TableBody> 
 
             
             </Table>
