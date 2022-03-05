@@ -18,6 +18,17 @@ import { useDispatch } from 'react-redux';
 import { Routes, Route, Link, useParams } from 'react-router-dom';
 import { onGetUsersbyId } from '../Redux/Action/useraction';
 const historyHeaders = ['Changed On', 'Changed By', 'Description'];
+function DataValues({ label, value }) {
+  return (
+    <>
+      <Typography variant="caption" sx={{ mt: 1.5, color: 'text.secondary' }}>
+        {label}
+      </Typography>
+      <Typography variant="h6">{value}</Typography>
+    </>
+  );
+}
+
 function DataColumnValues1({ dv1, dv2, dv3, dv4, dv5, dv6, dv7, dv8 }) {
   return (
     <Grid container direction="column">
@@ -111,14 +122,14 @@ function UserDetail() {
             <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  {historyHeaders.map((head) => (
+                  {/* {historyHeaders.map((head) => (
                     <TableCell sx={{ fontWeight: 'bold' }} key={head}>
                       {head}
                     </TableCell>
-                  ))}
+                  ))} */}
                 </TableRow>
               </TableHead>
-              <TableBody component={Paper}>
+              {/* <TableBody component={Paper}>
                 {users_details.history?.map((history) => (
                   <TableRow key={history.id}>
                     <TableCell>{history.userId}</TableCell>
@@ -126,7 +137,7 @@ function UserDetail() {
                     <TableCell>{history.changedBy}</TableCell>
                   </TableRow>
                 ))}
-              </TableBody>
+              </TableBody> */}
             </Table>
           </TableContainer>
         </Stack>
