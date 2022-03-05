@@ -9,7 +9,7 @@ import {
   useRouteMatch,
 } from 'react-router';
 
-import { Redirect, Route, BrowserRouter, Routes } from 'react-router-dom';
+// import { Redirect, Route, BrowserRouter, Routes } from 'react-router-dom';
 
 export default function Router() {
   const { path } = useRouteMatch();
