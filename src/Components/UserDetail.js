@@ -122,11 +122,11 @@ function UserDetail() {
             <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  {/* {historyHeaders.map((head) => (
+                  {historyHeaders.map((head) => (
                     <TableCell sx={{ fontWeight: 'bold' }} key={head}>
                       {head}
                     </TableCell>
-                  ))} */}
+                  ))}
                 </TableRow>
               </TableHead>
               {/* <TableBody component={Paper}>
@@ -138,6 +138,8 @@ function UserDetail() {
                   </TableRow>
                 ))}
               </TableBody> */}
+
+            
             </Table>
           </TableContainer>
         </Stack>
