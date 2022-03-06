@@ -1,3 +1,4 @@
+import React from "react"
 import Button from '@material-ui/core/Button';
 import { Formik, Form } from 'formik';
 import TextField from '@material-ui/core/TextField';
@@ -27,7 +28,7 @@ export default function UpdateUserForm(onSubmit, initialValues) {
         {({ isSubmitting }) => (
           <Form>
             <Stack sx={{ m: '10px' }}>
-              <FormTextInput
+              <TextField
                 label="Name"
                 name="name"
                 type="text"
