@@ -39,3 +39,25 @@ export const onGetUsersbyId = (users_id) => async (dispatch) => {
       alert(error);
     }
   };
+
+  export const onUpdateManagerUsers =
+  (user_id, manager) => async (dispatch) => {
+    const md = { id: manager?.id, name: manager?.name, email: manager?.email };
+    try {
+      const assign_manager = await dispatch({
+        [Fetching_Api]: {
+          url: `/users/admin/users/${user_id}/assign_manager`,
+          method: 'POST',
+          types: [UPDATE_USERS_MANAGER, UPDATE_USERS_MANAGER_SUCCESS],
+          body: md,
+        },
+      });
+      dispatch({
+        type: UPDATE_USERS_MANAGER_SUCCESS,
+        body: assign_manager,
+      });
+      return assign_manager;
+    } catch (error) {
+      throw new Error('Manager Not Assigned. ' + error);
+    }
+  };

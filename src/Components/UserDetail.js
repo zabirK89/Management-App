@@ -88,7 +88,7 @@ function UserDetail() {
   console.log("userdetail===>",users_details)
   return (
     <>
-      <h5>User Detail</h5>
+      <h3>User Detail</h3>
       {showProgress && <LinearProgress />}
 
       {users_details && (
