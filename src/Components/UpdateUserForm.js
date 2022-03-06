@@ -67,7 +67,7 @@ export default function UpdateUserForm(onSubmit, initialValues) {
             </Stack>
 
             <Box sx={{ float: 'right', mt: '10px' }}>
-              <Button fullWidth={false} variant="outlined" disabled={isSubmitting}>
+              <Button fullWidth={false} variant="outlined" disabled={isSubmitting} type="summit">
                 Update
               </Button>
             </Box>
