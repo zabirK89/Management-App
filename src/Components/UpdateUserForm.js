@@ -29,7 +29,7 @@ export default function UpdateUserForm({onSubmit, initialValues}) {
         validationSchema={Schema}
         onSubmit={async (values, { setSubmitting }) => {
           console.log(values);
-           onSubmit(values);
+       await    onSubmit(values);
           setSubmitting(false);
      
           console.log('clicked');
