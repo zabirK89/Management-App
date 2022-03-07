@@ -68,7 +68,7 @@ export const onGetUsersbyId = (users_id) => async (dispatch) => {
   async (dispatch) => {
     try {
       const updateUsers = await dispatch({
-        [CALL_API]: {
+        [Fetching_Api]: {
           url: `/users/admin/users/${id}/update`,
           method: 'POST',
           types: [UPDATE_USERS_SUCCESS, UPDATE_USERS],
@@ -85,3 +85,18 @@ export const onGetUsersbyId = (users_id) => async (dispatch) => {
     }
   };
 
+
+  export const onSearchUsers = (term) => async (dispatch) => {
+    try {
+      const users = await dispatch({
+        [Fetching_Api]: {
+          url: `/users/users/search?term=${term}`,
+          method: 'GET',
+        },
+      });
+      return users;
+    } catch (error) {
+      alert(`${error}`);
+    }
+  };
+  

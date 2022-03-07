@@ -6,8 +6,8 @@ import TextField from '@material-ui/core/TextField';
 import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import { Formik } from 'formik';
-import { Link, useNavigate } from 'react-router-dom';
-import { Grid, Paper, Box, Stack } from '@mui/material';
+import {  useNavigate } from 'react-router-dom';
+import {  Box } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import * as yup from 'yup';
 import { userLogin } from '../Redux/Action/Loginaction';
@@ -103,8 +103,8 @@ export default function header() {
                   {/* <Link to="admin" style={{ textDecoration: 'none' }}> */}
                   <Button
                     variant="contained"
-                    color="primary"
                     style={{ width: '550px' }}
+                    color="primary"
                     type="submit"
                     label="Login"
                   >

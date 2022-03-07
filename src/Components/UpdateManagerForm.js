@@ -1,8 +1,9 @@
+import React from "react"
 import { Box, Divider } from '@mui/material';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import Button from '@material-ui/core/Button';
-import FormUsersPicker from '../forms/FormUsersPicker';
+import FormUsersPicker from './FormComponents/FormUsersPicker';
 
 const Schema = Yup.object().shape({
   manager: Yup.object()
@@ -16,7 +17,7 @@ const Schema = Yup.object().shape({
 
 
 
-export default function UpdateManagerForm(onSubmit,initialValues,) {
+export default function UpdateManagerForm(onSubmit,initialValues) {
   return (
     <>
       <Formik
@@ -32,7 +33,8 @@ export default function UpdateManagerForm(onSubmit,initialValues,) {
             <Divider>Current Manager</Divider>
             <FormUsersPicker label="Assign Manager" disabled={isSubmitting} name="manager" />
             <Box sx={{ float: 'right', mt: '10px' }}>
-              <Button label="Submit" type="summit" />
+              <Button label="Submit"      color="primary"
+                    type="submit"/>
             </Box>
           </Form>
         )}

@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react';
 import { Box, LinearProgress } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {  useParams ,useNavigate} from 'react-router-dom';
-import { onGetUsersbyId,onUpdateUsers } from '../Redux/Action/useraction';
-import UpdateUserForm from './UpdateUserForm';
+import { useParams, useNavigate } from 'react-router-dom';
+import { onGetUsersbyId, onUpdateUsers } from '../Redux/Action/useraction';
+import UpdateUserForm from './UpdateUserForm'; 
 
 export default function UpdateUser() {
   const { id } = useParams();
@@ -20,7 +20,7 @@ export default function UpdateUser() {
       try {
         setShowProgress(true);
         const userdetails = await dispatch(onGetUsersbyId(id));
-        const { name, email, designation, joining_date } =userdetails ;
+        const { name, email, designation, joining_date } = userdetails;
 
         setUsersValue({
           name,
@@ -29,7 +29,7 @@ export default function UpdateUser() {
           joining_date,
         });
       } catch (error) {
-        enqueueSnackbar((error).message, {
+        enqueueSnackbar(error.message, {
           variant: 'error',
         });
       } finally {
@@ -48,15 +48,21 @@ export default function UpdateUser() {
           <UpdateUserForm
             initialValues={userUpdateValue}
             onSubmit={async (values) => {
+           
               try {
                 const { name, email, designation, joining_date } = values;
+                console.log("userForm===========>",name)
                 setShowProgress(true);
-                await dispatch(onUpdateUsers(id, name, email, designation, joining_date));
-                enqueueSnackbar('User Updated successfully', { variant: 'success' });
+                await dispatch(
+                  onUpdateUsers(id, name, email, designation, joining_date)
+                );
+                enqueueSnackbar('User Updated successfully', {
+                  variant: 'success',
+                });
                 setShowProgress(false);
                 setTimeout(history.push.bind(null, '/admin/users'), 1);
               } catch (error) {
-                enqueueSnackbar((error).message, { variant: 'error' });
+                enqueueSnackbar(error.message, { variant: 'error' });
               } finally {
                 setShowProgress(false);
               }

@@ -1,7 +1,10 @@
 import React from "react"
 import Button from '@material-ui/core/Button';
+
 import { Formik, Form } from 'formik';
 import TextField from '@material-ui/core/TextField';
+// import TextField from './FormComponents/FormTextInput';
+
 import * as Yup from 'yup';
 import { Box } from '@mui/system';
 import { Stack } from '@mui/material';
@@ -9,7 +12,7 @@ const Schema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').required('Required Name!'),
   email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
   designation: Yup.string().min(2, 'Too Short!').required('Required designation!'),
-  joining_date: Yup.string().required('Required Joining Date!'),
+  // joining_date: Yup.string().required('Required Joining Date!'),
 });
 
 
@@ -23,6 +26,8 @@ export default function UpdateUserForm(onSubmit, initialValues) {
         onSubmit={async (values, { setSubmitting }) => {
           await onSubmit(values);
           setSubmitting(false);
+          console.log(values)
+          console.log("clicked")
         }}
       >
         {({ isSubmitting }) => (
@@ -67,7 +72,11 @@ export default function UpdateUserForm(onSubmit, initialValues) {
             </Stack>
 
             <Box sx={{ float: 'right', mt: '10px' }}>
-              <Button fullWidth={false} variant="outlined" disabled={isSubmitting} type="summit">
+              <Button fullWidth={false} variant="outlined"      variant="contained"
+           
+                    color="primary"
+                    type="submit"
+                    label="Login">
                 Update
               </Button>
             </Box>

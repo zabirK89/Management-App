@@ -6,6 +6,7 @@ import LoginPage from '../Components/LoginPage';
 import ProtectedRoute from './ProtectedRoute';
 import UserDetail from '../Components/UserDetail';
 import UpdateUser from '../Components/UpdateUser';
+import UpdateManager from "../Components/UpdateManager"
 function AppRoutes() {
   const role = useSelector((state) => {
     return state.token.role;
@@ -27,6 +28,7 @@ function AppRoutes() {
         <Route path="/admin/users/:id" element={<UserDetail />} />
         <Route path="/admin/users/update/:id" element={<UpdateUser />} />
         <Route path="/" element={<LoginPage />}></Route>
+        <Route path="/admin/users/manager/:id" element={<UpdateManager/>} />
       </Routes>
     </BrowserRouter>
   );
