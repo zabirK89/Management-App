@@ -15,7 +15,7 @@ import {
 import { useSnackbar } from 'notistack';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Routes, Route, Link, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { onGetUsersbyId } from '../Redux/Action/useraction';
 const historyHeaders = ['Changed On', 'Changed By', 'Description'];
 function DataValues({ label, value }) {

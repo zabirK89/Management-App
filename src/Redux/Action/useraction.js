@@ -40,8 +40,7 @@ export const onGetUsersbyId = (users_id) => async (dispatch) => {
     }
   };
 
-  export const onUpdateManagerUsers =
-  (user_id, manager) => async (dispatch) => {
+  export const onUpdateManagerUsers =(user_id, manager) => async (dispatch) => {
     const md = { id: manager?.id, name: manager?.name, email: manager?.email };
     try {
       const assign_manager = await dispatch({
@@ -61,3 +60,28 @@ export const onGetUsersbyId = (users_id) => async (dispatch) => {
       throw new Error('Manager Not Assigned. ' + error);
     }
   };
+
+
+
+  export const onUpdateUsers =
+  (id, name, email, designation, joining_date) =>
+  async (dispatch) => {
+    try {
+      const updateUsers = await dispatch({
+        [CALL_API]: {
+          url: `/users/admin/users/${id}/update`,
+          method: 'POST',
+          types: [UPDATE_USERS_SUCCESS, UPDATE_USERS],
+          body: { name, email, designation, joining_date },
+        },
+      });
+      dispatch({
+        type: UPDATE_USERS_SUCCESS,
+        body: updateUsers,
+      });
+      return updateUsers;
+    } catch (error) {
+      throw new Error('Error updating users. ' + error);
+    }
+  };
+
