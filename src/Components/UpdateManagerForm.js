@@ -22,9 +22,10 @@ export default function UpdateManagerForm(onSubmit,initialValues) {
     <>
       <Formik
         initialValues={initialValues}
+      
         validationSchema={Schema}
-        onSubmit={async (values, { setSubmitting }) => {
-          await onSubmit(values);
+        onSubmit={ (values, { setSubmitting }) => {
+          //  onSubmit(values);
           setSubmitting(false);
         }}
       >
