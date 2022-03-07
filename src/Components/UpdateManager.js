@@ -55,6 +55,25 @@ export default function UpdateManager() {
           /> 
         </Box>
       )}
+      {!userDetails&&(<label> <UpdateManagerForm
+            initialValues={userDetails}
+            onSubmit={async (values) => {
+              try {
+                const { manager } = values;
+                await dispatch(onUpdateManagerUsers(id, manager));
+                enqueueSnackbar('Manager Assigned Successfully', {
+                  variant: 'success',
+                });
+                setShowProgress(false);
+                setTimeout(history( '/admin/'), 1);
+              } catch (error) {
+                enqueueSnackbar(error.message, { variant: 'error' });
+              } finally {
+                setShowProgress(false);
+              }
+            }} 
+          
+          /> </label>)}
     </>
   );
 }
