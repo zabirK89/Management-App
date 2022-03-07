@@ -10,7 +10,7 @@ import {  useNavigate } from 'react-router-dom';
 import {  Box } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import * as yup from 'yup';
-import { userLogin } from '../Redux/Action/Loginaction';
+import { userLogin,logout } from '../Redux/Action/Loginaction';
 
 const validationSchema = yup.object().shape({
   userId: yup.string().required('Email is required'),
@@ -22,6 +22,9 @@ export default function header() {
   const navigate = useNavigate();
   const initialValues = { userId: '', password: '' };
   const dispatch = useDispatch();
+useEffect(()=>{
+  dispatch(logout())
+},[])
 
   const onSubmit = (values) => {
     try {
