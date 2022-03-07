@@ -17,15 +17,14 @@ const Schema = Yup.object().shape({
 
 
 
-export default function UpdateManagerForm(onSubmit,initialValues) {
+export default function UpdateManagerForm({onSubmit,initialValues}) {
   return (
     <>
       <Formik
         initialValues={initialValues}
-      
         validationSchema={Schema}
-        onSubmit={ (values, { setSubmitting }) => {
-          //  onSubmit(values);
+        onSubmit={async (values, { setSubmitting }) => {
+          await onSubmit(values);
           setSubmitting(false);
         }}
       >

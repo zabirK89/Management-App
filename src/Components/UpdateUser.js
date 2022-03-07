@@ -51,7 +51,7 @@ export default function UpdateUser() {
            
               try {
                 const { name, email, designation, joining_date } = values;
-                console.log("userForm===========>",name)
+                console.log("userForm===========>")
                 setShowProgress(true);
                 await dispatch(
                   onUpdateUsers(id, name, email, designation, joining_date)

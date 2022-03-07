@@ -22,12 +22,12 @@ async function invokeAPI({ endpoint, config, headerContent, contentType }) {
   let result;
   if (typeof contentType === 'undefined') {
     result = await response.json();
-    console.log('Result ---->', result.token);
-    console.log(result);
+    // console.log('Result ---->', result.token);
+    // console.log(result);
     return { data: result };
   } else if (contentType === 'application/pdf') {
     result = await response.blob();
-    console.log('Result ---->', result);
+    // console.log('Result ---->', result);
     return { data: result };
   }
 }
@@ -47,7 +47,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
     } = action[Fetching_Api];
     console.log('body = ', body);
     const { token: token } = store.getState();
-    console.log('check=======>', store.getState());
+    // console.log('check=======>', store.getState());
 
     const headerContent = {
       ...(token.token ? { Authorization: `Bearer ${token.token}` } : {}),
