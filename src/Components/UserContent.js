@@ -105,10 +105,7 @@ export default function UserDetail() {
                 <TableCell>
                   {!user.manager ? (
                     <>
-                      <Typography
-                        component="span"
-                        sx={{ color: 'text.secondary' }}
-                      >
+                      <Typography component="span" sx={{ color: 'text.secondary' }}>
                         Assign Manager
                       </Typography>
                       <IconButton
@@ -124,10 +121,7 @@ export default function UserDetail() {
                     </>
                   ) : (
                     <>
-                      <Typography
-                        component="span"
-                        sx={{ color: 'text.secondary' }}
-                      >
+                      <Typography component="span" sx={{ color: 'text.secondary' }}>
                         {user.manager.name}
                       </Typography>
                       <IconButton
@@ -143,6 +137,7 @@ export default function UserDetail() {
                     </>
                   )}
                 </TableCell>
+
                 <TableCell>{user.active}</TableCell>
                 <TableCell align="right">
                   {' '}
