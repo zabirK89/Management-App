@@ -44,7 +44,7 @@ export default function UpdateManager() {
                   variant: 'success',
                 });
                 setShowProgress(false);
-                setTimeout(history.push.bind(null, '/admin/users'), 1);
+                setTimeout(history( '/admin/'), 1);
               } catch (error) {
                 enqueueSnackbar(error.message, { variant: 'error' });
               } finally {

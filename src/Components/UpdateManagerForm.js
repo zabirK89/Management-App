@@ -33,8 +33,17 @@ export default function UpdateManagerForm({onSubmit,initialValues}) {
             <Divider>Current Manager</Divider>
             <FormUsersPicker label="Assign Manager" disabled={isSubmitting} name="manager" />
             <Box sx={{ float: 'right', mt: '10px' }}>
-              <Button label="Submit"      color="primary"
-                    type="submit"/>
+            <Button
+                fullWidth={false}
+                variant="outlined"
+                variant="contained"
+                disabled={isSubmitting}
+                color="primary"
+                type="submit"
+                
+              >
+                Update
+              </Button>
             </Box>
           </Form>
         )}

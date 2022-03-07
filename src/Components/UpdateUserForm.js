@@ -92,7 +92,7 @@ export default function UpdateUserForm({onSubmit, initialValues}) {
                 disabled={isSubmitting}
                 color="primary"
                 type="submit"
-                label="Login"
+                
               >
                 Update
               </Button>
