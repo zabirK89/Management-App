@@ -34,7 +34,7 @@ export default function UpdateManager() {
       {showProgress && <LinearProgress />}
       {userDetails && (
         <Box sx={{ p: 2 }}>
-          <UpdateManagerForm
+            <UpdateManagerForm
             initialValues={userDetails}
             onSubmit={async (values) => {
               try {
@@ -50,8 +50,9 @@ export default function UpdateManager() {
               } finally {
                 setShowProgress(false);
               }
-            }}
-          />
+            }} 
+          
+          /> 
         </Box>
       )}
     </>
