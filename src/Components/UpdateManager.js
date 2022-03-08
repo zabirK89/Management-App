@@ -22,7 +22,7 @@ export default function UpdateManager() {
   async function onGetUsers() {
     const userBody = await dispatch(onGetUsersbyId(id));
     const { manager } = userBody;
-    setUserDetails(manager);
+    setUserDetails({manager});
   }
   useEffect(() => {
     onGetUsers();

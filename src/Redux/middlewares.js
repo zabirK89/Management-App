@@ -36,7 +36,7 @@ export const middleWareDispatch = (store) => (next) => async (action) => {
   if (typeof action[Fetching_Api] === 'undefined') {
     return next(action);
   }
-  const { silent = false } = action[Fetching_Api];
+  // const { silent = false } = action[Fetching_Api];
   try {
     const {
       url,

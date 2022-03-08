@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import UpdateUser from './UpdateUser';
 import UpdateManager from './UpdateManager';
-import { GET_USERS_SUCCESS } from '../Redux/Type/usertype';
+// import { GET_USERS_SUCCESS } from '../Redux/Type/usertype';
 
 export default function Router() {
   console.log(path)

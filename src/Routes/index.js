@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import React from 'react';
 import { Redirect, Route, BrowserRouter, Routes,Outlet } from 'react-router-dom';
-// import {useNavigate } from "react-router-dom"
+import {useNavigate } from "react-router-dom"
 import Sidebar from '../Components/Sidebar';
 import LoginPage from '../Components/LoginPage';
 import ProtectedRoute from './ProtectedRoute';
@@ -16,7 +16,6 @@ function AppRoutes() {
     return state.token.role;
   });
 
-  // const history = useNavigate();
   // const { path } = Outlet();
   // const location = useLocation();
   return (
