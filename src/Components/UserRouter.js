@@ -1,19 +1,18 @@
 import { Box, Drawer } from '@mui/material';
-import { Location } from 'history';
-import { Route, Switch, useHistory, useLocation, useRouteMatch } from 'react-router';
-import UserDetail from './Detail';
-import UsersList from './List';
+import { Location } from 'history'
+import { useLocation, Route,Outlet, Routes,useNavigate } from 'react-router-dom';
+import UserDetail from './UserDetail';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import CreateUser from './CreateUser';
 import UpdateUser from './UpdateUser';
 import UpdateManager from './UpdateManager';
-import { GET_USERS_SUCCESS } from '../../redux-store/types/users';
+import { GET_USERS_SUCCESS } from '../Redux/Type/usertype';
 
 export default function Router() {
-  const { path } = useRouteMatch();
-  const history = useHistory();
+  console.log(path)
   const dispatch = useDispatch();
+  const history = useNavigate();
+  const { path } = Outlet();
   const location = useLocation();
   const background = location.state && location.state.background;
   useEffect(() => {
@@ -24,13 +23,12 @@ export default function Router() {
 
   return (
     <>
-      <Switch location={background || location}>
-        <Route path={`${path}/add`} component={CreateUser} />
-        <Route path={`${path}/update/:id`} component={UpdateUser} />
-        <Route path={`${path}/:id`} component={UserDetail} />
-        <Route path={`${path}//manager:id`} component={UpdateManager} />
-        <Route exact path={path} component={UsersList} />
-      </Switch>
+      <Routes location={background || location}>
+        <Route path={`${path}/update/:id`} element={UpdateUser} />
+        <Route path={`${path}/:id`} element={UserDetail} />
+        <Route path="/admin/users/manager/:id" element={UpdateManager} />
+        <Route exact path={path} element={UsersList} />
+      </Routes>
       <Drawer
         open={!!background}
         anchor="right"
@@ -44,12 +42,12 @@ export default function Router() {
           flexDirection={'column'}
           display="flex"
         >
-          <Switch>
-            <Route path={`${path}/add`} component={CreateUser} />
-            <Route path={`${path}/update/:id`} component={UpdateUser} />
-            <Route path={`${path}/manager/:id`} component={UpdateManager} />
-            <Route path={`${path}/:id`} component={UserDetail} />
-          </Switch>
+          <Routes>
+            <Route path={`${path}/add`} element={CreateUser} />
+            <Route path={`${path}/update/:id`} element={UpdateUser} />
+            <Route path="/admin/users/manager/:id" element={UpdateManager} />
+            <Route path={`${path}/:id`} element={UserDetail} />
+          </Routes>
         </Box>
       </Drawer>
     </>
