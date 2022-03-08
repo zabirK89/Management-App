@@ -1,7 +1,5 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
-// import { ButtonPrimary } from '../forms/Button';
-// import TextField from '../forms/TextField';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import * as Yup from 'yup';
@@ -31,28 +29,27 @@ const Schema = Yup.object().shape({
   }),
 });
 
-export default function UserForm({onSubmit,initialValues}) {
+export default function UserForm({ onSubmit, initialValues }) {
   return (
     <Formik
       initialValues={initialValues}
       validateOnMount={false}
       validationSchema={Schema}
       onSubmit={async (values, { setSubmitting }) => {
-        console.log("ales==========>",values)
-        console.log("clicked froem useer create")
-         await onSubmit(values);
+        console.log('ales==========>', values);
+        console.log('clicked froem useer create');
+        await onSubmit(values);
         setSubmitting(false);
       }}
     >
-      {({ isSubmitting, values, handleChange, handleSubmit }
-      ) => (
+      {({ isSubmitting, values, handleChange, handleSubmit }) => (
         <Form onSubmit={handleSubmit}>
           <Divider sx={{ mt: 1 }}>Primary Details</Divider>
           <TextField
             label="Name"
             name="name"
             values={values.name}
-            variant = 'outlined'
+            variant="outlined"
             type="text"
             placeholder="Name"
             onChange={handleChange}
@@ -63,7 +60,7 @@ export default function UserForm({onSubmit,initialValues}) {
             label="Email"
             name="email"
             values={values.email}
-            variant = 'outlined'
+            variant="outlined"
             margin="dense"
             type="email"
             placeholder="Email"
@@ -75,23 +72,26 @@ export default function UserForm({onSubmit,initialValues}) {
             label="Designation"
             name="designation"
             values={values.designation}
-            variant = 'outlined'
+            variant="outlined"
             type="text"
             placeholder="Designation"
             onChange={handleChange}
             disabled={isSubmitting}
           />
           <Divider sx={{ mt: 2 }}>Employment Details</Divider>
-          <TextField label="Joining Date" name="joining_date"
-                   values={values.joining_date}
-                   variant = 'outlined'
-             onChange={handleChange}
-           />
+          <TextField
+            label="Joining Date"
+            name="joining_date"
+            values={values.joining_date}
+            variant="outlined"
+            onChange={handleChange}
+          />
+          <br />
+
           <FormSelect
             label="Employment Type"
             name="additionalDetails.type"
             values={values.additionalDetails.type}
-
             options={[
               { value: 'FullTime', label: 'Full Time' },
               { value: 'Intern', label: 'Intern' },
@@ -103,7 +103,7 @@ export default function UserForm({onSubmit,initialValues}) {
           <TextField
             label="Department"
             name="additionalDetails.department"
-            variant = 'outlined'
+            variant="outlined"
             type="text"
             values={values.additionalDetails.department}
             placeholder="Department"
@@ -113,7 +113,7 @@ export default function UserForm({onSubmit,initialValues}) {
           <br />
           <TextField
             label="Sub Department"
-            variant = 'outlined'
+            variant="outlined"
             name="additionalDetails.subDepartment"
             type="text"
             placeholder="Sub Department"
@@ -124,7 +124,7 @@ export default function UserForm({onSubmit,initialValues}) {
           <br />
           <TextField
             label="Employee Id"
-            variant = 'outlined'
+            variant="outlined"
             name="additionalDetails.empId"
             type="text"
             placeholder="Employee Id"
@@ -132,11 +132,11 @@ export default function UserForm({onSubmit,initialValues}) {
             onChange={handleChange}
             disabled={isSubmitting}
           />
-
+          <br />
           <Divider sx={{ mt: 2 }}>Contact Details</Divider>
           <TextField
             label="Phone Number"
-            variant = 'outlined'
+            variant="outlined"
             name="additionalDetails.phoneNumber"
             type="text"
             values={values.additionalDetails.phoneNumber}
@@ -147,7 +147,7 @@ export default function UserForm({onSubmit,initialValues}) {
           <br />
           <TextField
             label="Blood Group"
-            variant = 'outlined'
+            variant="outlined"
             name="additionalDetails.bloodGroup"
             type="text"
             placeholder="Blood Group"
@@ -155,21 +155,22 @@ export default function UserForm({onSubmit,initialValues}) {
             onChange={handleChange}
             disabled={isSubmitting}
           />
+
           <br />
           <TextField
             label="Address"
-            variant = 'outlined'
+            variant="outlined"
             name="additionalDetails.adress"
             type="text"
             values={values.additionalDetails.adress}
             placeholder="Address"
-
             disabled={isSubmitting}
           />
+
           <Divider sx={{ mt: 2 }}>Finance Details</Divider>
           <TextField
             label="Pan No"
-            variant = 'outlined'
+            variant="outlined"
             name="additionalDetails.pan"
             type="text"
             values={values.additionalDetails.pan}
@@ -177,6 +178,7 @@ export default function UserForm({onSubmit,initialValues}) {
             onChange={handleChange}
             disabled={isSubmitting}
           />
+          <br />
           <Divider sx={{ mt: 2 }} />
           <Box sx={{ my: 1 }} display="flex" justifyContent="flex-end">
             <Button
