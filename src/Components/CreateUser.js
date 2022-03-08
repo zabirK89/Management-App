@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import { Box, LinearProgress } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import { useState } from 'react';
@@ -33,7 +33,7 @@ export default function CreateUser() {
 
   return (
     <>
-<h4>Create New Employee</h4>
+      <h4>Create New Employee</h4>
       {showProgress && <LinearProgress />}
       <Box
         sx={{
@@ -50,10 +50,12 @@ export default function CreateUser() {
             try {
               setShowProgress(true);
               await dispatch(createUser(values));
-              enqueueSnackbar('Employee created successfully', { variant: 'success' });
+              enqueueSnackbar('Employee created successfully', {
+                variant: 'success',
+              });
               setTimeout(history('/admin/users'), 1);
             } catch (error) {
-              enqueueSnackbar((error).message, { variant: 'error' });
+              enqueueSnackbar(error.message, { variant: 'error' });
             } finally {
               setShowProgress(false);
             }

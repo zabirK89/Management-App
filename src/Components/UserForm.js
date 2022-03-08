@@ -31,49 +31,62 @@ const Schema = Yup.object().shape({
   }),
 });
 
-export default function UserForm(props) {
+export default function UserForm({onSubmit,initialValues}) {
   return (
     <Formik
-      initialValues={props.initialValues}
+      initialValues={initialValues}
       validateOnMount={false}
       validationSchema={Schema}
       onSubmit={async (values, { setSubmitting }) => {
-        await props.onSubmit(values);
+        console.log("ales==========>",values)
+        console.log("clicked froem useer create")
+         await onSubmit(values);
         setSubmitting(false);
       }}
     >
-      {({ isSubmitting }) => (
-        <Form>
+      {({ isSubmitting, values, handleChange, handleSubmit }
+      ) => (
+        <Form onSubmit={handleSubmit}>
           <Divider sx={{ mt: 1 }}>Primary Details</Divider>
           <TextField
             label="Name"
             name="name"
+            values={values.name}
             type="text"
             placeholder="Name"
+            onChange={handleChange}
             disabled={isSubmitting}
           />
           <br />
           <TextField
             label="Email"
             name="email"
+            values={values.email}
             margin="dense"
             type="email"
             placeholder="Email"
+            onChange={handleChange}
             disabled={isSubmitting}
           />
           <br />
           <TextField
             label="Designation"
             name="designation"
+            values={values.designation}
             type="text"
             placeholder="Designation"
+            onChange={handleChange}
             disabled={isSubmitting}
           />
           <Divider sx={{ mt: 2 }}>Employment Details</Divider>
-          <TextField label="Joining Date" name="joining_date" />
+          <TextField label="Joining Date" name="joining_date"
+                   values={values.joining_date}
+             onChange={handleChange}
+           />
           <FormSelect
             label="Employment Type"
             name="additionalDetails.type"
+            values={values.additionalDetails.type}
             options={[
               { value: 'FullTime', label: 'Full Time' },
               { value: 'Intern', label: 'Intern' },
@@ -86,7 +99,9 @@ export default function UserForm(props) {
             label="Department"
             name="additionalDetails.department"
             type="text"
+            values={values.additionalDetails.department}
             placeholder="Department"
+            onChange={handleChange}
             disabled={isSubmitting}
           />
           <br />
@@ -95,6 +110,8 @@ export default function UserForm(props) {
             name="additionalDetails.subDepartment"
             type="text"
             placeholder="Sub Department"
+            values={values.additionalDetails.subDepartment}
+            onChange={handleChange}
             disabled={isSubmitting}
           />
           <br />
@@ -103,6 +120,8 @@ export default function UserForm(props) {
             name="additionalDetails.empId"
             type="text"
             placeholder="Employee Id"
+            values={values.additionalDetails.empId}
+            onChange={handleChange}
             disabled={isSubmitting}
           />
 
@@ -111,7 +130,9 @@ export default function UserForm(props) {
             label="Phone Number"
             name="additionalDetails.phoneNumber"
             type="text"
+            values={values.additionalDetails.phoneNumber}
             placeholder="Phone Number"
+            onChange={handleChange}
             disabled={isSubmitting}
           />
           <br />
@@ -120,6 +141,8 @@ export default function UserForm(props) {
             name="additionalDetails.bloodGroup"
             type="text"
             placeholder="Blood Group"
+            values={values.additionalDetails.bloodGroup}
+            onChange={handleChange}
             disabled={isSubmitting}
           />
           <br />
@@ -127,7 +150,9 @@ export default function UserForm(props) {
             label="Address"
             name="additionalDetails.adress"
             type="text"
+            values={values.additionalDetails.adress}
             placeholder="Address"
+
             disabled={isSubmitting}
           />
           <Divider sx={{ mt: 2 }}>Finance Details</Divider>
@@ -135,7 +160,9 @@ export default function UserForm(props) {
             label="Pan No"
             name="additionalDetails.pan"
             type="text"
+            values={values.additionalDetails.pan}
             placeholder="Pan No"
+            onChange={handleChange}
             disabled={isSubmitting}
           />
           <Divider sx={{ mt: 2 }} />

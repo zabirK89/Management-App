@@ -1,22 +1,12 @@
 import {Fetching_Api} from "../middlewares"
 import  {Fetch_users} from "../Type/usertype"
 import {
-  UserPayload,
-  GET_USERS_SUCCESS,
   CREATE_USERS_SUCCESS,
   CREATE_USERS,
   UPDATE_USERS,
   UPDATE_USERS_SUCCESS,
-  ACTIVATE_USERS,
-  ACTIVATE_USERS_SUCCESS,
-  DEACTIVATE_USERS,
-  DEACTIVATE_USERS_SUCCESS,
   UPDATE_USERS_MANAGER,
   UPDATE_USERS_MANAGER_SUCCESS,
-  UserAdditionalDetails,
-  UserDetails,
-  UsersSearchParameter,
-  AssignManager,
 } from "../Type/usertype"
 
 

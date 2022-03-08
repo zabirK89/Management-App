@@ -20,18 +20,17 @@ const Schema = Yup.object().shape({
   joining_date: Yup.string().required('Required Joining Date!'),
 });
 
-export default function UpdateUserForm({onSubmit, initialValues}) {
+export default function UpdateUserForm({ onSubmit, initialValues }) {
   return (
     <>
       <Formik
         initialValues={initialValues}
-
         validationSchema={Schema}
         onSubmit={async (values, { setSubmitting }) => {
           console.log(values);
-       await    onSubmit(values);
+          await onSubmit(values);
           setSubmitting(false);
-     
+
           console.log('clicked');
         }}
       >
@@ -92,7 +91,6 @@ export default function UpdateUserForm({onSubmit, initialValues}) {
                 disabled={isSubmitting}
                 color="primary"
                 type="submit"
-                
               >
                 Update
               </Button>
