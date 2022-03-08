@@ -79,6 +79,7 @@ export default function UserDetail() {
             component={Link}
             variant="outlined"
             to={{ pathname: `/admin/users/add`, state: { background: location } }}
+            style={{marginLeft:"720px"}}
           >
             Add User
           </Button>
