@@ -53,7 +53,7 @@ export default function CreateUser() {
               enqueueSnackbar('Employee created successfully', {
                 variant: 'success',
               });
-              setTimeout(history('/admin/users'), 1);
+              setTimeout(history('/admin/'), 1);
             } catch (error) {
               enqueueSnackbar(error.message, { variant: 'error' });
             } finally {
