@@ -38,6 +38,7 @@ export default function UpdateUserForm({ onSubmit, initialValues }) {
           <Form onSubmit={handleSubmit}>
             <Stack sx={{ m: '10px' }}>
               <TextField
+                variant="outlined"
                 value={values.name}
                 label="Name"
                 name="name"
@@ -50,6 +51,7 @@ export default function UpdateUserForm({ onSubmit, initialValues }) {
 
             <Stack sx={{ m: '10px' }}>
               <TextField
+                variant="outlined"
                 value={values.email}
                 label="Email"
                 name="email"
@@ -62,6 +64,7 @@ export default function UpdateUserForm({ onSubmit, initialValues }) {
 
             <Stack sx={{ m: '10px' }}>
               <TextField
+                variant="outlined"
                 value={values.designation}
                 label="Designation"
                 name="designation"
@@ -73,6 +76,7 @@ export default function UpdateUserForm({ onSubmit, initialValues }) {
             </Stack>
             <Stack sx={{ m: '10px' }}>
               <TextField
+                variant="outlined"
                 value={values.joining_date}
                 label="Joining Date"
                 name="joining_date"
