@@ -118,4 +118,41 @@ export const onGetUsersbyId = (users_id) => async (dispatch) => {
       alert(`${error}`);
     }
   };
+
+
+  export const createUser = (body) => async (dispatch) => {
+    try {
+      const { designation, joining_date, name, email, additionalDetails } = body;
+      const additionalDetailsBody = {};
+      Object.keys(additionalDetails).forEach((key) => {
+        if (additionalDetails[key] !== '') {
+          additionalDetailsBody[key] = additionalDetails[key];
+        }
+      });
+      const createdUser = await dispatch({
+        [Fetching_Api]: {
+          url: `/users/admin/users/create`,
+          method: 'POST',
+          types: [CREATE_USERS_SUCCESS, CREATE_USERS],
+          body: {
+            name,
+            email,
+            designation,
+            joining_date,
+            additionalDetails: additionalDetailsBody,
+          },
+        },
+      });
+      dispatch({
+        type: CREATE_USERS_SUCCESS,
+        body: createdUser,
+      });
+      return createdUser;
+    } catch (error) {
+      alert(`${error}`);
+      throw error;
+    }
+  };
+  
+  
   
