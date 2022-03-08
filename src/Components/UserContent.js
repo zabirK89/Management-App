@@ -7,6 +7,7 @@ import TableBody from '@mui/material/TableBody';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import TableCell from '@mui/material/TableCell';
+import { useMatch } from 'react-router-dom';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
@@ -25,6 +26,7 @@ import { getusers } from '../Redux/Action/useraction';
 
 export default function UserDetail() {
   const dispatch = useDispatch();
+  // const { url } = useMatch();
   const users = useSelector((state) => state.users);
   console.log('users=====>', users);
   useEffect(() => {
@@ -73,6 +75,14 @@ export default function UserDetail() {
             >
               Reload
             </Button>
+            <Button
+            component={Link}
+            variant="outlined"
+            to={{ pathname: `/admin/users/add`, state: { background: location } }}
+          >
+            Add User
+          </Button>
+
           </Stack>
         </div>
       </div>

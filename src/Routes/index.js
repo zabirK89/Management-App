@@ -9,6 +9,7 @@ import UserDetail from '../Components/UserDetail';
 import UpdateUser from '../Components/UpdateUser';
 import UpdateManager from "../Components/UpdateManager"
 import UserRouter from "../Components/UserRouter"
+import CreateUser from "../Components/CreateUser"
 
 function AppRoutes() {
   const role = useSelector((state) => {
@@ -32,6 +33,7 @@ function AppRoutes() {
         <Route path="/admin/users/:id" element={<UserDetail />} />
         <Route path="/admin/users/update/:id" element={<UpdateUser />} />
         <Route path="/admin/users/manager/:id" element={<UpdateManager/>} />
+        <Route path="/admin/users/add" element={<CreateUser/>}/>
         <Route path="/admin/user" element={<UserRouter/>}/>
         <Route path="/" element={<LoginPage />}></Route>
       </Routes>

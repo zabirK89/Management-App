@@ -1,10 +1,11 @@
+import React from "react"
 import { Box, LinearProgress } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../Redux/Action/useraction';
-import { TitleBar } from '../assets/components';
+// import { TitleBar } from '../assets/components';
 import UserForm from './UserForm';
 
 const initialValues = {
@@ -32,7 +33,7 @@ export default function CreateUser() {
 
   return (
     <>
-      <TitleBar title="Create New Employee" />
+<h4>Create New Employee</h4>
       {showProgress && <LinearProgress />}
       <Box
         sx={{
