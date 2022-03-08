@@ -1,8 +1,8 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import React from 'react';
+// import { Redirect } from 'react-router-dom';
 
-function RedirectRoute({ isLoggedIn, children }) {
-  return isLoggedIn ? children : <Redirect to="/"></Redirect>;
-}
+// function RedirectRoute({ isLoggedIn, children }) {
+//   return isLoggedIn ? children : <Redirect to="/"></Redirect>;
+// }
 
-export default RedirectRoute;
+// export default RedirectRoute;
