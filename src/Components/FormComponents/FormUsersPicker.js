@@ -1,11 +1,10 @@
-import React from "react"
+import React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { useField } from 'formik';
 import { Autocomplete, AutocompleteProps, TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import debounce from 'lodash.debounce';
 import { onSearchUsers } from '../../Redux/Action/useraction';
-
 
 function FormUsersPicker(
   name,
@@ -14,7 +13,7 @@ function FormUsersPicker(
   margin = 'dense',
   label,
   ...rest
-){
+) {
   const [field, meta, { setValue }] = useField(name);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { onChange, ...restField } = field;
@@ -28,13 +27,15 @@ function FormUsersPicker(
     setInputValue(value);
   };
 
-  const debouncedChangeHandler = useMemo(() => debounce(handleInputChange, 400), []);
+  const debouncedChangeHandler = useMemo(
+    () => debounce(handleInputChange, 400),
+    []
+  );
   useEffect(() => {
     return () => {
       debouncedChangeHandler.cancel();
     };
   }, []);
-
 
   useEffect(() => {
     let active = true;
@@ -44,7 +45,7 @@ function FormUsersPicker(
     async function fetchUsersByText(text) {
       const users = await dispatch(onSearchUsers(text));
       if (!active) return;
-      setUsers(users );
+      setUsers(users);
     }
     inputValue.length > 2 ? fetchUsersByText(inputValue) : setUsers([]);
     return () => {

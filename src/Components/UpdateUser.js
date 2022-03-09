@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { onGetUsersbyId, onUpdateUsers } from '../Redux/Action/useraction';
-import UpdateUserForm from './UpdateUserForm'; 
+import UpdateUserForm from './UpdateUserForm';
 
 export default function UpdateUser() {
   const { id } = useParams();
@@ -48,10 +48,9 @@ export default function UpdateUser() {
           <UpdateUserForm
             initialValues={userUpdateValue}
             onSubmit={async (values) => {
-           
               try {
                 const { name, email, designation, joining_date } = values;
-                console.log("userForm===========>")
+                console.log('userForm===========>');
                 setShowProgress(true);
                 await dispatch(
                   onUpdateUsers(id, name, email, designation, joining_date)
@@ -60,7 +59,7 @@ export default function UpdateUser() {
                   variant: 'success',
                 });
                 setShowProgress(false);
-                setTimeout(history( '/admin'), 1);
+                setTimeout(history('/admin'), 1);
               } catch (error) {
                 enqueueSnackbar(error.message, { variant: 'error' });
               } finally {

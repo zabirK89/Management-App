@@ -76,14 +76,16 @@ export default function UserDetail() {
               Reload
             </Button>
             <Button
-            component={Link}
-            variant="outlined"
-            to={{ pathname: `/admin/users/add`, state: { background: location } }}
-            style={{marginLeft:"720px"}}
-          >
-            Add User
-          </Button>
-
+              component={Link}
+              variant="outlined"
+              to={{
+                pathname: `/admin/users/add`,
+                state: { background: location },
+              }}
+              style={{ marginLeft: '720px' }}
+            >
+              Add User
+            </Button>
           </Stack>
         </div>
       </div>
@@ -116,7 +118,10 @@ export default function UserDetail() {
                 <TableCell>
                   {!user.manager ? (
                     <>
-                      <Typography component="span" sx={{ color: 'text.secondary' }}>
+                      <Typography
+                        component="span"
+                        sx={{ color: 'text.secondary' }}
+                      >
                         Assign Manager
                       </Typography>
                       <IconButton
@@ -132,7 +137,10 @@ export default function UserDetail() {
                     </>
                   ) : (
                     <>
-                      <Typography component="span" sx={{ color: 'text.secondary' }}>
+                      <Typography
+                        component="span"
+                        sx={{ color: 'text.secondary' }}
+                      >
                         {user.manager.name}
                       </Typography>
                       <IconButton

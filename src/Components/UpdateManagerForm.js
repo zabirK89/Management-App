@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import { Box, Divider } from '@mui/material';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
@@ -15,9 +15,7 @@ const Schema = Yup.object().shape({
     }),
 });
 
-
-
-export default function UpdateManagerForm({onSubmit,initialValues}) {
+export default function UpdateManagerForm({ onSubmit, initialValues }) {
   return (
     <>
       <Formik
@@ -31,16 +29,19 @@ export default function UpdateManagerForm({onSubmit,initialValues}) {
         {({ isSubmitting }) => (
           <Form>
             <Divider>Current Manager</Divider>
-            <FormUsersPicker label="Assign Manager" disabled={isSubmitting} name="manager" />
+            <FormUsersPicker
+              label="Assign Manager"
+              disabled={isSubmitting}
+              name="manager"
+            />
             <Box sx={{ float: 'right', mt: '10px' }}>
-            <Button
+              <Button
                 fullWidth={false}
                 variant="outlined"
                 variant="contained"
                 disabled={isSubmitting}
                 color="primary"
                 type="submit"
-                
               >
                 Update
               </Button>

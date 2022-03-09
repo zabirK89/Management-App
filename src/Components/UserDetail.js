@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import {
   Grid,
   LinearProgress,
@@ -15,7 +15,7 @@ import {
 import { useSnackbar } from 'notistack';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {  useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { onGetUsersbyId } from '../Redux/Action/useraction';
 const historyHeaders = ['Changed On', 'Changed By', 'Description'];
 function DataValues({ label, value }) {
@@ -68,7 +68,7 @@ function UserDetail() {
   const [users_details, setDetails] = useState();
   const [showProgress, setShowProgress] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
- 
+
   useEffect(() => {
     async function getUsersbyId() {
       try {
@@ -85,7 +85,7 @@ function UserDetail() {
     }
     getUsersbyId();
   }, [id]);
-  console.log("userdetail===>",users_details)
+  console.log('userdetail===>', users_details);
   return (
     <>
       <h3>User Detail</h3>
@@ -130,18 +130,15 @@ function UserDetail() {
                   ))}
                 </TableRow>
               </TableHead>
-               <TableBody component={Paper}>
-                {
-                  users_details.history?.map((hist) => (
+              <TableBody component={Paper}>
+                {users_details.history?.map((hist) => (
                   <TableRow key={hist.id}>
                     <TableCell>{hist.userId}</TableCell>
                     <TableCell>{hist.description}</TableCell>
                     <TableCell>{hist.changedBy.name}</TableCell>
                   </TableRow>
                 ))}
-              </TableBody> 
-
-            
+              </TableBody>
             </Table>
           </TableContainer>
         </Stack>

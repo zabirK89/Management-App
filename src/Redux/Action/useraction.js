@@ -1,5 +1,5 @@
-import {Fetching_Api} from "../middlewares"
-import  {Fetch_users} from "../Type/usertype"
+import { Fetching_Api } from '../middlewares';
+import { Fetch_users } from '../Type/usertype';
 import {
   CREATE_USERS_SUCCESS,
   CREATE_USERS,
@@ -7,74 +7,66 @@ import {
   UPDATE_USERS_SUCCESS,
   UPDATE_USERS_MANAGER,
   UPDATE_USERS_MANAGER_SUCCESS,
-} from "../Type/usertype"
+} from '../Type/usertype';
 
+export const getusers = () => async (dispatch) => {
+  console.log('accessed');
+  try {
+    const users = await dispatch({
+      [Fetching_Api]: {
+        url: `/users/admin/users`,
+        method: 'GET',
+      },
+    });
 
-export const getusers = ()=>async(dispatch)=>{
-    console.log("accessed")
-try{
-const users=await dispatch({
-    [Fetching_Api]:{
-            url :`/users/admin/users`,
-            method:"GET"
-    }
-
-})
-
-
-dispatch({
-    type:Fetch_users,
-    users:users
-})
-return users;
-
-}catch(error){
-alert(`${error}`)
-}
-}
-
+    dispatch({
+      type: Fetch_users,
+      users: users,
+    });
+    return users;
+  } catch (error) {
+    alert(`${error}`);
+  }
+};
 
 export const onGetUsersbyId = (users_id) => async (dispatch) => {
-    console.log("on get user accessed")
-    try {
-      const getUsersbyId = await dispatch({
-        [Fetching_Api]: {
-          url: `/users/admin/users/${users_id}`,
-          method: 'GET',
-        },
-      });
-      return getUsersbyId ;
-    } catch (error) {
-      alert(error);
-    }
-  };
+  console.log('on get user accessed');
+  try {
+    const getUsersbyId = await dispatch({
+      [Fetching_Api]: {
+        url: `/users/admin/users/${users_id}`,
+        method: 'GET',
+      },
+    });
+    return getUsersbyId;
+  } catch (error) {
+    alert(error);
+  }
+};
 
-  export const onUpdateManagerUsers =(user_id, manager) => async (dispatch) => {
-    const md = { id: manager?.id, name: manager?.name, email: manager?.email };
-    try {
-      const assign_manager = await dispatch({
-        [Fetching_Api]: {
-          url: `/users/admin/users/${user_id}/assign_manager`,
-          method: 'POST',
-          types: [UPDATE_USERS_MANAGER, UPDATE_USERS_MANAGER_SUCCESS],
-          body: md,
-        },
-      });
-      dispatch({
-        type: UPDATE_USERS_MANAGER_SUCCESS,
-        body: assign_manager,
-      });
-      return assign_manager;
-    } catch (error) {
-      throw new Error('Manager Not Assigned. ' + error);
-    }
-  };
+export const onUpdateManagerUsers = (user_id, manager) => async (dispatch) => {
+  const md = { id: manager?.id, name: manager?.name, email: manager?.email };
+  try {
+    const assign_manager = await dispatch({
+      [Fetching_Api]: {
+        url: `/users/admin/users/${user_id}/assign_manager`,
+        method: 'POST',
+        types: [UPDATE_USERS_MANAGER, UPDATE_USERS_MANAGER_SUCCESS],
+        body: md,
+      },
+    });
+    dispatch({
+      type: UPDATE_USERS_MANAGER_SUCCESS,
+      body: assign_manager,
+    });
+    return assign_manager;
+  } catch (error) {
+    throw new Error('Manager Not Assigned. ' + error);
+  }
+};
 
-
-
-  export const onUpdateUsers =
-  (id, name, email, designation, joining_date) =>
-  async (dispatch) => {
+export const onUpdateUsers =
+  (id, name, email, designation, joining_date) => async (dispatch) => {
     try {
       const updateUsers = await dispatch({
         [Fetching_Api]: {
@@ -94,55 +86,50 @@ export const onGetUsersbyId = (users_id) => async (dispatch) => {
     }
   };
 
+export const onSearchUsers = (term) => async (dispatch) => {
+  try {
+    const users = await dispatch({
+      [Fetching_Api]: {
+        url: `/users/users/search?term=${term}`,
+        method: 'GET',
+      },
+    });
+    return users;
+  } catch (error) {
+    alert(`${error}`);
+  }
+};
 
-  export const onSearchUsers = (term) => async (dispatch) => {
-    try {
-      const users = await dispatch({
-        [Fetching_Api]: {
-          url: `/users/users/search?term=${term}`,
-          method: 'GET',
+export const createUser = (body) => async (dispatch) => {
+  try {
+    const { designation, joining_date, name, email, additionalDetails } = body;
+    const additionalDetailsBody = {};
+    Object.keys(additionalDetails).forEach((key) => {
+      if (additionalDetails[key] !== '') {
+        additionalDetailsBody[key] = additionalDetails[key];
+      }
+    });
+    const createdUser = await dispatch({
+      [Fetching_Api]: {
+        url: `/users/admin/users/create`,
+        method: 'POST',
+        types: [CREATE_USERS_SUCCESS, CREATE_USERS],
+        body: {
+          name,
+          email,
+          designation,
+          joining_date,
+          additionalDetails: additionalDetailsBody,
         },
-      });
-      return users;
-    } catch (error) {
-      alert(`${error}`);
-    }
-  };
-
-
-  export const createUser = (body) => async (dispatch) => {
-    try {
-      const { designation, joining_date, name, email, additionalDetails } = body;
-      const additionalDetailsBody = {};
-      Object.keys(additionalDetails).forEach((key) => {
-        if (additionalDetails[key] !== '') {
-          additionalDetailsBody[key] = additionalDetails[key];
-        }
-      });
-      const createdUser = await dispatch({
-        [Fetching_Api]: {
-          url: `/users/admin/users/create`,
-          method: 'POST',
-          types: [CREATE_USERS_SUCCESS, CREATE_USERS],
-          body: {
-            name,
-            email,
-            designation,
-            joining_date,
-            additionalDetails: additionalDetailsBody,
-          },
-        },
-      });
-      dispatch({
-        type: CREATE_USERS_SUCCESS,
-        body: createdUser,
-      });
-      return createdUser;
-    } catch (error) {
-      alert(`${error}`);
-      throw error;
-    }
-  };
-  
-  
-  
+      },
+    });
+    dispatch({
+      type: CREATE_USERS_SUCCESS,
+      body: createdUser,
+    });
+    return createdUser;
+  } catch (error) {
+    alert(`${error}`);
+    throw error;
+  }
+};

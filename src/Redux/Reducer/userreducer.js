@@ -1,18 +1,17 @@
-import {Fetch_users} from "../Type/usertype"
+import { Fetch_users } from '../Type/usertype';
 
+const initialState = {
+  users: [],
+};
 
-const initialState={
-users:[]
-}
-
-export default function userReducer(state=initialState,action){
-switch (action.type){
-    case Fetch_users:{
-        return {
-            ...state,
-            users:action.users,
-        }
+export default function userReducer(state = initialState, action) {
+  switch (action.type) {
+    case Fetch_users: {
+      return {
+        ...state,
+        users: action.users,
+      };
     }
-}
-return state
+  }
+  return state;
 }

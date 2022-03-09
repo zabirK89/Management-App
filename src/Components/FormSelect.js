@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 import { useField } from 'formik';
 import {
   FormControl,
@@ -8,7 +8,6 @@ import {
   Select,
   SelectProps,
 } from '@mui/material';
-
 
 export default function FormSelect({
   name,

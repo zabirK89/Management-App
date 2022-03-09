@@ -1,6 +1,12 @@
 import { Box, Drawer } from '@mui/material';
-import { Location } from 'history'
-import { useLocation, Route,Outlet, Routes,useNavigate } from 'react-router-dom';
+import { Location } from 'history';
+import {
+  useLocation,
+  Route,
+  Outlet,
+  Routes,
+  useNavigate,
+} from 'react-router-dom';
 import UserDetail from './UserDetail';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -9,7 +15,7 @@ import UpdateManager from './UpdateManager';
 // import { GET_USERS_SUCCESS } from '../Redux/Type/usertype';
 
 export default function Router() {
-  console.log(path)
+  console.log(path);
   const dispatch = useDispatch();
   const history = useNavigate();
   const { path } = Outlet();

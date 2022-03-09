@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 import authReducer from './Loginreducer';
-import userState from "./userreducer"
-export const rootReducer=(history)=>
-combineReducers({
+import userState from './userreducer';
+export const rootReducer = (history) =>
+  combineReducers({
     router: history,
-    token:authReducer,
-    users:userState
-})
-
-
+    token: authReducer,
+    users: userState,
+  });

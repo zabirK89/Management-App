@@ -22,7 +22,7 @@ export default function UpdateManager() {
   async function onGetUsers() {
     const userBody = await dispatch(onGetUsersbyId(id));
     const { manager } = userBody;
-    setUserDetails({manager});
+    setUserDetails({ manager });
   }
   useEffect(() => {
     onGetUsers();
@@ -34,7 +34,7 @@ export default function UpdateManager() {
       {showProgress && <LinearProgress />}
       {userDetails && (
         <Box sx={{ p: 2 }}>
-            <UpdateManagerForm
+          <UpdateManagerForm
             initialValues={userDetails}
             onSubmit={async (values) => {
               try {
@@ -44,18 +44,20 @@ export default function UpdateManager() {
                   variant: 'success',
                 });
                 setShowProgress(false);
-                setTimeout(history( '/admin/'), 1);
+                setTimeout(history('/admin/'), 1);
               } catch (error) {
                 enqueueSnackbar(error.message, { variant: 'error' });
               } finally {
                 setShowProgress(false);
               }
-            }} 
-          
-          /> 
+            }}
+          />
         </Box>
       )}
-      {!userDetails&&(<label> <UpdateManagerForm
+      {!userDetails && (
+        <label>
+          {' '}
+          <UpdateManagerForm
             initialValues={userDetails}
             onSubmit={async (values) => {
               try {
@@ -65,15 +67,16 @@ export default function UpdateManager() {
                   variant: 'success',
                 });
                 setShowProgress(false);
-                setTimeout(history( '/admin/'), 1);
+                setTimeout(history('/admin/'), 1);
               } catch (error) {
                 enqueueSnackbar(error.message, { variant: 'error' });
               } finally {
                 setShowProgress(false);
               }
-            }} 
-          
-          /> </label>)}
+            }}
+          />{' '}
+        </label>
+      )}
     </>
   );
 }
