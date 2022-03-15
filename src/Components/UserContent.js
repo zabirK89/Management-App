@@ -20,15 +20,24 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import Pagination from '@mui/material/Pagination';
 import { useEffect } from 'react';
 import { getusers } from '../Redux/Action/useraction';
 
 export default function UserDetail() {
+
+  // const handlePageNumber = (_event, page) => {
+  //   dispatch({
+  //     type: SET_PAGE_NUMBER,
+  //     searchOptions: { ...searchOptions, page },
+  //   });
+  // };
+
+
   const dispatch = useDispatch();
   // const { url } = useMatch();
-  const users = useSelector((state) => state.users);
-  console.log('users=====>', users);
+  const users = useSelector((state) => state.users.users);
+  console.log('users=====>', users.users);
   useEffect(() => {
     async function Users() {
       try {
@@ -185,6 +194,16 @@ export default function UserDetail() {
           </TableBody>
         </Table>
       </TableContainer>
+      {/* <Grid container justifyContent="center">
+        <Pagination
+          sx={{ my: 2 }}
+          count={Math.round(users.totalMatches / users.limit)}
+          color="primary"
+          onChange={handlePageNumber}
+          defaultValue={1}
+        />
+      </Grid> */}
+
     </>
   );
 }
