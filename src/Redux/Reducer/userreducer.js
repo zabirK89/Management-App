@@ -9,7 +9,10 @@ export default function userReducer(state = initialState, action) {
     case Fetch_users: {
       return {
         ...state,
-        users: action.users,
+        users: action.users.users,
+        page: action.users.page,
+        limit: action.users.limit,
+        totalMatches: action.users.totalMatches
       };
     }
   }

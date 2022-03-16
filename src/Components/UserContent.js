@@ -36,7 +36,7 @@ export default function UserDetail() {
 
   const dispatch = useDispatch();
   // const { url } = useMatch();
-  const users = useSelector((state) => state.users.users);
+  const users = useSelector((state) => state.users);
   console.log('users new =====>', users.users);
   useEffect(() => {
     async function Users() {
